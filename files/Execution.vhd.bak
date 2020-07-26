@@ -1,0 +1,146 @@
+library std;
+use std.standard.all;
+library ieee;
+use ieee.std_logic_1164.all;      
+use ieee.numeric_std.all;
+
+-- mux2, alu_add, se61, 7s, se6, mux8, mux4, alu, 
+
+entity Execution is   
+  port( reset, beq_sel, c_en, z_en : in std_logic;
+	pc_out, imm, im_beq, p3_d1, p3_d2, k : in std_logic_vector(15 downto 0);  --value of k in final datapath
+	s7_in : in std_logic_vector(8 downto 0);
+	alu_a_sel : in std_logic_vector(2 downto 0);
+	alu_b_sel, alu_op : in std_logic_vector(1 downto 0);
+	c, z : out std_logic;
+	beq_out, alu_out, s7_out : out std_logic_vector(15 downto 0)	
+);
+end entity;
+-----------------------------------------------------------------------------------------
+architecture struct of Execution is
+
+signal  add_in, se6_1_out, se6_out, dummy3, alu_a, alu_b: std_logic_vector(15 downto 0);
+-----------------------------------------------------------------------------------------
+      component mux4 is
+	generic(input_width : integer);
+	port(
+	d0 : std_logic_vector(input_width-1 downto 0);
+	d1 : std_logic_vector(input_width-1 downto 0);
+	d2 : std_logic_vector(input_width-1 downto 0);
+	d3 : std_logic_vector(input_width-1 downto 0);
+
+  	sel: in std_logic_vector(1 downto 0);
+	dout: out std_logic_vector(input_width-1 downto 0)
+	);
+	end component;
+----------------------------------------------------------------------------------------
+      component alu_add is
+	port(x,y : in std_logic_vector(15 downto 0);
+	z : out std_logic_vector(15 downto 0)
+	);
+	end component;
+---------------------------------------------------------------------------------------
+	component alu is
+	   port(x,y: in std_logic_vector(15 downto 0);
+		z: out std_logic_vector(15 downto 0);
+		aluc: out std_logic;
+		aluz: out std_logic;
+		aluop: in std_logic_vector(1 downto 0)
+			  );
+	end component;
+-----------------------------------------------------------------------------------------
+	component mux2 is
+	generic(input_width : integer);
+	port(
+		d0 : std_logic_vector(input_width-1 downto 0);
+		d1 : std_logic_vector(input_width-1  downto 0);
+
+	  	sel: in std_logic;
+		dout: out std_logic_vector(input_width-1 downto 0)
+	);
+	end component;
+---------------------------------------------------------------------------------------
+	component mux8 is
+	generic(input_width : integer);
+	port(
+		d0 : std_logic_vector(input_width-1 downto 0);
+		d1 : std_logic_vector(input_width-1 downto 0);
+		d2 : std_logic_vector(input_width-1 downto 0);
+		d3 : std_logic_vector(input_width-1 downto 0);
+		d4 : std_logic_vector(input_width-1 downto 0);
+		d5 : std_logic_vector(input_width-1 downto 0);
+		d6 : std_logic_vector(input_width-1 downto 0);
+		d7 : std_logic_vector(input_width-1 downto 0);
+
+
+	  	sel: in std_logic_vector(2 downto 0);
+		dout: out std_logic_vector(input_width-1 downto 0)
+	);
+	end component;
+-----------------------------------------------------------------------------------------
+	component shifter7 is
+	 port(	din 	: in std_logic_vector(8 downto 0);
+	 	dout	: out std_logic_vector(15 downto 0)
+	 	);
+	end component;
+----------------------------------------------------------------------------------------
+	component signextender6 is
+	port(
+	 	din 	: in std_logic_vector(5 downto 0);
+	 	dout	: out std_logic_vector(15 downto 0)
+	 	);
+	end component;
+-----------------------------------------------------------------------------------------
+	component tempreg1 is  
+	  port( 
+		reset : in std_logic;
+		din, flag_en : in std_logic;  
+		dout : out std_logic
+	);  
+	end component;
+-----------------------------------------------------------------------------------------
+begin
+
+--beq_sel <= from P3
+--beq_out goes to P4
+--imm from p3
+--s7_in from p3
+--s7_out to p4
+--pc_out from p3
+--imm_beq from p3
+
+
+beq_mux: mux2
+generic map (16)
+port map (sel => beq_sel, d0 => "0000000000000011", d1 => se6_1_out, dout => add_in);
+-------------------------------------------------------------------------------------------
+alu_pc: alu_add
+port map (x=> pc_out, y=> add_in, z=> beq_out);
+-------------------------------------------------------------------------------------------
+se6_1: signextender6
+port map (din => imm_beq, dout => se6_1_out);
+--------------------------------------------------------------------------------------------
+7s: shifter7
+port map (din => s7_in, dout => s7_out);
+-----------------------------------------------------------------------------------------------
+alu_a_mux: mux8
+generic map (16)
+port map (sel => alu_a_sel, d0 => p3_d1, d1 => p3_d2 , d2 => p4_alu, d3 => dummy3, d4 => p4_7s, d5 => p5_memd_out, d6 => dummy3, d7 => dummy3, dout => alu_a);
+----------------------------------------------------------------------------------------------
+se6: signextender6
+port map (din => imm, dout => se6_out);
+--------------------------------------------------------------------------------------------
+alu_b_mux: mux4
+generic map (16)
+port map (sel => alu_b_sel, dout => alu_b, d0 => p3_d2 , d1 => se6_out, d2 => k, d3 => dummy3);
+------------------------------------------------------------------------------------------------
+alu_main: alu
+port map (x => alu_a, y => alu_b, z => alu_out, aluc => alu_c, aluz => alu_z, aluop => alu_op);
+--------------------------------------------------------------------------------------------------
+c_reg: tempreg1
+port map (reset => reset, flag_en => c_en, din => alu_c, dout => c); 
+--------------------------------------------------------------------------------------------------
+z_reg: tempreg1
+port map (reset => reset, flag_en => z_en, din => alu_z, dout => z);
+
+end struct;

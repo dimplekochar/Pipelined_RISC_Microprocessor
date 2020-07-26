@@ -1,0 +1,633 @@
+Analysis & Synthesis report for Execution
+Sun Nov 25 20:17:40 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: mux2:beq_mux
+ 12. Parameter Settings for User Entity Instance: mux8:alu_a_mux
+ 13. Parameter Settings for User Entity Instance: mux4:alu_b_mux
+ 14. Port Connectivity Checks: "alu:alu_main|subtracter16:subtractersixteen|adder16:a1"
+ 15. Port Connectivity Checks: "alu:alu_main|adder16:addersixteen|add1:a0"
+ 16. Port Connectivity Checks: "alu_add:alu_pc|add_1bit:a15"
+ 17. Port Connectivity Checks: "alu_add:alu_pc|add_1bit:a0"
+ 18. Port Connectivity Checks: "mux2:beq_mux"
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Nov 25 20:17:40 2018       ;
+; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name               ; Execution                                   ;
+; Top-level Entity Name       ; Execution                                   ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 238                                         ;
+; Total pins                  ; 194                                         ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; Execution          ; Execution          ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
+; tempreg1+flag_en.vhd             ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/tempreg1+flag_en.vhd ;         ;
+; signextender6.vhd                ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/signextender6.vhd    ;         ;
+; shifter7.vhd                     ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/shifter7.vhd         ;         ;
+; alu.vhd                          ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd              ;         ;
+; alu_add.vhd                      ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu_add.vhd          ;         ;
+; Execution.vhd                    ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd        ;         ;
+; mux8.vhd                         ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd             ;         ;
+; mux4.vhd                         ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd             ;         ;
+; mux2.vhd                         ; yes             ; User VHDL File  ; /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd             ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                             ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Total logic elements                        ; 238                       ;
+;     -- Combinational with no register       ; 238                       ;
+;     -- Register only                        ; 0                         ;
+;     -- Combinational with a register        ; 0                         ;
+;                                             ;                           ;
+; Logic element usage by number of LUT inputs ;                           ;
+;     -- 4 input functions                    ; 141                       ;
+;     -- 3 input functions                    ; 84                        ;
+;     -- 2 input functions                    ; 10                        ;
+;     -- 1 input functions                    ; 3                         ;
+;     -- 0 input functions                    ; 0                         ;
+;                                             ;                           ;
+; Logic elements by mode                      ;                           ;
+;     -- normal mode                          ; 216                       ;
+;     -- arithmetic mode                      ; 22                        ;
+;     -- qfbk mode                            ; 0                         ;
+;     -- register cascade mode                ; 0                         ;
+;     -- synchronous clear/load mode          ; 0                         ;
+;     -- asynchronous clear/load mode         ; 0                         ;
+;                                             ;                           ;
+; Total registers                             ; 0                         ;
+; Total logic cells in carry chains           ; 24                        ;
+; I/O pins                                    ; 194                       ;
+; Maximum fan-out node                        ; mux8:alu_a_mux|dout[15]~0 ;
+; Maximum fan-out                             ; 24                        ;
+; Total fan-out                               ; 882                       ;
+; Average fan-out                             ; 2.04                      ;
++---------------------------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                    ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node             ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                        ; Entity Name  ; Library Name ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------+--------------+--------------+
+; |Execution                             ; 238 (0)     ; 0            ; 0          ; 194  ; 0            ; 238 (0)      ; 0 (0)             ; 0 (0)            ; 24 (0)          ; 0 (0)      ; |Execution                                                                 ; Execution    ; work         ;
+;    |alu:alu_main|                      ; 138 (76)    ; 0            ; 0          ; 0    ; 0            ; 138 (76)     ; 0 (0)             ; 0 (0)            ; 17 (0)          ; 0 (0)      ; |Execution|alu:alu_main                                                    ; alu          ; work         ;
+;       |adder16:addersixteen|           ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 17 (0)          ; 0 (0)      ; |Execution|alu:alu_main|adder16:addersixteen                               ; adder16      ; work         ;
+;          |add1:a0|                     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|adder16:addersixteen|add1:a0                       ; add1         ; work         ;
+;          |add1:a1|                     ; 17 (17)     ; 0            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 17 (17)         ; 0 (0)      ; |Execution|alu:alu_main|adder16:addersixteen|add1:a1                       ; add1         ; work         ;
+;       |nand16:nandsixteen|             ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|nand16:nandsixteen                                 ; nand16       ; work         ;
+;       |subtracter16:subtractersixteen| ; 43 (0)      ; 0            ; 0          ; 0    ; 0            ; 43 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen                     ; subtracter16 ; work         ;
+;          |adder16:a1|                  ; 13 (0)      ; 0            ; 0          ; 0    ; 0            ; 13 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1          ; adder16      ; work         ;
+;             |add1:a10|                 ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a10 ; add1         ; work         ;
+;             |add1:a11|                 ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a11 ; add1         ; work         ;
+;             |add1:a12|                 ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a12 ; add1         ; work         ;
+;             |add1:a13|                 ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a13 ; add1         ; work         ;
+;             |add1:a1|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a1  ; add1         ; work         ;
+;             |add1:a2|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a2  ; add1         ; work         ;
+;             |add1:a3|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a3  ; add1         ; work         ;
+;             |add1:a4|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a4  ; add1         ; work         ;
+;             |add1:a5|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a5  ; add1         ; work         ;
+;             |add1:a6|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a6  ; add1         ; work         ;
+;             |add1:a7|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a7  ; add1         ; work         ;
+;             |add1:a8|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a8  ; add1         ; work         ;
+;             |add1:a9|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a1|add1:a9  ; add1         ; work         ;
+;          |adder16:a2|                  ; 30 (0)      ; 0            ; 0          ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2          ; adder16      ; work         ;
+;             |add1:a10|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a10 ; add1         ; work         ;
+;             |add1:a11|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a11 ; add1         ; work         ;
+;             |add1:a12|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a12 ; add1         ; work         ;
+;             |add1:a13|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a13 ; add1         ; work         ;
+;             |add1:a14|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a14 ; add1         ; work         ;
+;             |add1:a15|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a15 ; add1         ; work         ;
+;             |add1:a1|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a1  ; add1         ; work         ;
+;             |add1:a2|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a2  ; add1         ; work         ;
+;             |add1:a3|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a3  ; add1         ; work         ;
+;             |add1:a4|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a4  ; add1         ; work         ;
+;             |add1:a5|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a5  ; add1         ; work         ;
+;             |add1:a6|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a6  ; add1         ; work         ;
+;             |add1:a7|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a7  ; add1         ; work         ;
+;             |add1:a8|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a8  ; add1         ; work         ;
+;             |add1:a9|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu:alu_main|subtracter16:subtractersixteen|adder16:a2|add1:a9  ; add1         ; work         ;
+;    |alu_add:alu_pc|                    ; 22 (0)      ; 0            ; 0          ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 0 (0)            ; 7 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc                                                  ; alu_add      ; work         ;
+;       |add_1bit:a0|                    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a0                                      ; add_1bit     ; work         ;
+;       |add_1bit:a10|                   ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a10                                     ; add_1bit     ; work         ;
+;       |add_1bit:a11|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a11                                     ; add_1bit     ; work         ;
+;       |add_1bit:a12|                   ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a12                                     ; add_1bit     ; work         ;
+;       |add_1bit:a13|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a13                                     ; add_1bit     ; work         ;
+;       |add_1bit:a14|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a14                                     ; add_1bit     ; work         ;
+;       |add_1bit:a15|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a15                                     ; add_1bit     ; work         ;
+;       |add_1bit:a1|                    ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a1                                      ; add_1bit     ; work         ;
+;       |add_1bit:a6|                    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a6                                      ; add_1bit     ; work         ;
+;       |add_1bit:a7|                    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a7                                      ; add_1bit     ; work         ;
+;       |add_1bit:a8|                    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a8                                      ; add_1bit     ; work         ;
+;       |add_1bit:a9|                    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|alu_add:alu_pc|add_1bit:a9                                      ; add_1bit     ; work         ;
+;    |mux2:beq_mux|                      ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|mux2:beq_mux                                                    ; mux2         ; work         ;
+;    |mux4:alu_b_mux|                    ; 22 (22)     ; 0            ; 0          ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|mux4:alu_b_mux                                                  ; mux4         ; work         ;
+;    |mux8:alu_a_mux|                    ; 50 (50)     ; 0            ; 0          ; 0    ; 0            ; 50 (50)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|mux8:alu_a_mux                                                  ; mux8         ; work         ;
+;    |tempreg1:c_reg|                    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|tempreg1:c_reg                                                  ; tempreg1     ; work         ;
+;    |tempreg1:z_reg|                    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Execution|tempreg1:z_reg                                                  ; tempreg1     ; work         ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; tempreg1:c_reg|dout                                 ; c_en                ; yes                    ;
+; tempreg1:z_reg|dout                                 ; z_en                ; yes                    ;
+; alu:alu_main|z[0]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[1]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[2]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[3]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[4]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[5]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[6]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[7]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[8]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[9]                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[10]                                  ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[11]                                  ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[12]                                  ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[13]                                  ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[14]                                  ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|z[15]                                  ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|aluc                                   ; alu:alu_main|z[15]  ; yes                    ;
+; alu:alu_main|aluz                                   ; alu:alu_main|z[15]  ; yes                    ;
+; Number of user-specified and inferred latches = 20  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Execution|mux4:alu_b_mux|dout[10] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Execution|mux4:alu_b_mux|dout[5]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Execution|alu:alu_main|z[12]      ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Execution|mux8:alu_a_mux|dout[15] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:beq_mux ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; input_width    ; 16    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux8:alu_a_mux ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; input_width    ; 16    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux4:alu_b_mux ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; input_width    ; 16    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:alu_main|subtracter16:subtractersixteen|adder16:a1"                                 ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; y[15..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; y[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; aluc     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluz     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:alu_main|adder16:addersixteen|add1:a0" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; i    ; Input ; Info     ; Stuck at GND                                ;
++------+-------+----------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu_add:alu_pc|add_1bit:a15"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "alu_add:alu_pc|add_1bit:a0" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; i    ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "mux2:beq_mux"    ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; d0[1..0]  ; Input ; Info     ; Stuck at VCC ;
+; d0[15..2] ; Input ; Info     ; Stuck at GND ;
++-----------+-------+----------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Sun Nov 25 20:17:27 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Execution -c Execution
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file tempreg1+flag_en.vhd
+    Info (12022): Found design unit 1: tempreg1-struct File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/tempreg1+flag_en.vhd Line: 15
+    Info (12023): Found entity 1: tempreg1 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/tempreg1+flag_en.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file signextender6.vhd
+    Info (12022): Found design unit 1: signextender6-struct File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/signextender6.vhd Line: 14
+    Info (12023): Found entity 1: signextender6 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/signextender6.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file shifter7.vhd
+    Info (12022): Found design unit 1: shifter7-struct File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/shifter7.vhd Line: 13
+    Info (12023): Found entity 1: shifter7 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/shifter7.vhd Line: 7
+Info (12021): Found 13 design units, including 6 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: lab1 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 6
+    Info (12022): Found design unit 2: add1-Behave File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 47
+    Info (12022): Found design unit 3: mux1-Behave File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 63
+    Info (12022): Found design unit 4: adder16-behave File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 79
+    Info (12022): Found design unit 5: subtracter16-behave File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 128
+    Info (12022): Found design unit 6: nand16-behave File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 170
+    Info (12022): Found design unit 7: alu-struct File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 219
+    Info (12023): Found entity 1: add1 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 44
+    Info (12023): Found entity 2: mux1 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 59
+    Info (12023): Found entity 3: adder16 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 74
+    Info (12023): Found entity 4: subtracter16 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 123
+    Info (12023): Found entity 5: nand16 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 165
+    Info (12023): Found entity 6: alu File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 210
+Info (12021): Found 4 design units, including 2 entities, in source file alu_add.vhd
+    Info (12022): Found design unit 1: add_1bit-Behave File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu_add.vhd Line: 10
+    Info (12022): Found design unit 2: alu_add-behave File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu_add.vhd Line: 28
+    Info (12023): Found entity 1: add_1bit File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu_add.vhd Line: 7
+    Info (12023): Found entity 2: alu_add File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu_add.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file Execution.vhd
+    Info (12022): Found design unit 1: Execution-struct File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 21
+    Info (12023): Found entity 1: Execution File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file mux8.vhd
+    Info (12022): Found design unit 1: mux8-struct File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 25
+    Info (12023): Found entity 1: mux8 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mux4.vhd
+    Info (12022): Found design unit 1: mux4-struct File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 20
+    Info (12023): Found entity 1: mux4 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mux2.vhd
+    Info (12022): Found design unit 1: mux2-struct File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 18
+    Info (12023): Found entity 1: mux2 File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 7
+Info (12127): Elaborating entity "Execution" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at Execution.vhd(23): used implicit default value for signal "dummy3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 23
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:beq_mux" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 115
+Warning (10631): VHDL Process Statement warning at mux2.vhd(20): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[0]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[1]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[2]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[3]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[4]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[5]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[6]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[7]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[8]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[9]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[10]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[11]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[12]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[13]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[14]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[15]" at mux2.vhd(20) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux2.vhd Line: 20
+Info (12128): Elaborating entity "alu_add" for hierarchy "alu_add:alu_pc" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 119
+Info (12128): Elaborating entity "add_1bit" for hierarchy "alu_add:alu_pc|add_1bit:a0" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu_add.vhd Line: 36
+Info (12128): Elaborating entity "signextender6" for hierarchy "signextender6:se6_1" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 122
+Info (12128): Elaborating entity "shifter7" for hierarchy "shifter7:s7" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 125
+Info (12128): Elaborating entity "mux8" for hierarchy "mux8:alu_a_mux" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 128
+Warning (10631): VHDL Process Statement warning at mux8.vhd(27): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[0]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[1]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[2]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[3]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[4]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[5]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[6]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[7]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[8]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[9]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[10]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[11]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[12]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[13]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[14]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[15]" at mux8.vhd(27) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Info (12128): Elaborating entity "mux4" for hierarchy "mux4:alu_b_mux" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 135
+Warning (10631): VHDL Process Statement warning at mux4.vhd(22): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[0]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[1]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[2]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[3]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[4]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[5]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[6]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[7]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[8]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[9]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[10]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[11]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[12]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[13]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[14]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[15]" at mux4.vhd(22) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_main" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 139
+Warning (10631): VHDL Process Statement warning at alu.vhd(233): inferring latch(es) for signal or variable "aluz", which holds its previous value in one or more paths through the process File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Warning (10631): VHDL Process Statement warning at alu.vhd(233): inferring latch(es) for signal or variable "aluc", which holds its previous value in one or more paths through the process File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Warning (10631): VHDL Process Statement warning at alu.vhd(233): inferring latch(es) for signal or variable "z", which holds its previous value in one or more paths through the process File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[0]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[1]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[2]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[3]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[4]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[5]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[6]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[7]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[8]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[9]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[10]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[11]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[12]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[13]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[14]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[15]" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "aluc" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (10041): Inferred latch for "aluz" at alu.vhd(233) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+Info (12128): Elaborating entity "adder16" for hierarchy "alu:alu_main|adder16:addersixteen" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 230
+Info (12128): Elaborating entity "add1" for hierarchy "alu:alu_main|adder16:addersixteen|add1:a0" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 87
+Info (12128): Elaborating entity "nand16" for hierarchy "alu:alu_main|nand16:nandsixteen" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 231
+Info (12128): Elaborating entity "subtracter16" for hierarchy "alu:alu_main|subtracter16:subtractersixteen" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 232
+Warning (10036): Verilog HDL or VHDL warning at alu.vhd(130): object "c1" assigned a value but never read File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 130
+Warning (10036): Verilog HDL or VHDL warning at alu.vhd(130): object "t1" assigned a value but never read File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 130
+Info (12128): Elaborating entity "tempreg1" for hierarchy "tempreg1:c_reg" File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 142
+Warning (10631): VHDL Process Statement warning at tempreg1+flag_en.vhd(17): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/tempreg1+flag_en.vhd Line: 17
+Info (10041): Inferred latch for "dout" at tempreg1+flag_en.vhd(17) File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/tempreg1+flag_en.vhd Line: 17
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[0]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[1]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[2]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[3]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[4]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[5]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[6]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[7]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[8]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[9]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[10]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[11]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[12]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[13]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[14]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux4:alu_b_mux|dout[15]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux4.vhd Line: 22
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[0]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[1]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[2]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[3]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[4]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[5]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[6]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[7]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[8]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[9]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[10]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[11]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[12]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[13]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[14]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (14026): LATCH primitive "mux8:alu_a_mux|dout[15]" is permanently enabled File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/mux8.vhd Line: 27
+Warning (13012): Latch alu:alu_main|z[0] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[0] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[1] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[2] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[3] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[4] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[5] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[6] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[7] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[8] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[9] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[10] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[11] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[12] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[13] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[14] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|z[15] has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 233
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|aluc has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 213
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[0] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13012): Latch alu:alu_main|aluz has unsafe behavior File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/alu.vhd Line: 214
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[1] File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 15
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "s7_out[0]" is stuck at GND File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 17
+    Warning (13410): Pin "s7_out[1]" is stuck at GND File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 17
+    Warning (13410): Pin "s7_out[2]" is stuck at GND File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 17
+    Warning (13410): Pin "s7_out[3]" is stuck at GND File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 17
+    Warning (13410): Pin "s7_out[4]" is stuck at GND File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 17
+    Warning (13410): Pin "s7_out[5]" is stuck at GND File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 17
+    Warning (13410): Pin "s7_out[6]" is stuck at GND File: /home/shivi/Desktop/MICRO/PIPELINE_24nov_ctrl-done/Execution.vhd Line: 17
+Info (21057): Implemented 432 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 144 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21061): Implemented 238 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 87 warnings
+    Info: Peak virtual memory: 1230 megabytes
+    Info: Processing ended: Sun Nov 25 20:17:40 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:33
+
+

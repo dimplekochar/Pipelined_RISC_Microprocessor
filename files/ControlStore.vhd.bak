@@ -1,0 +1,188 @@
+library std;
+use std.standard.all;
+library ieee;
+use ieee.std_logic_1164.all;      
+use ieee.numeric_std.all;
+
+entity ControlStore is
+	port
+	(clk, reset : in std_logic;
+	P1,P2,P3,P4		: in std_logic_vector(15 downto 0);
+	c_check, z_check : in std_logic;
+	control_store1, control_store2 : out std_logic_vector(15 downto 0);	--c1_in, c2_in of P2a register
+        P2_f: out std_logic_vector;
+--	beq_mux		: out std_logic_vector;		--port map to P4 mei 85th bit (check acc to P4a, P4b) :p
+	);
+end entity;
+
+architecture struct of ControlStore is
+
+signal
+
+--TO-DO
+---forwarding, write, hazards(stall n flush)
+---check/add for LM/SM
+
+
+--1. add beq_mux in EX state
+--2. add Z_en condition and flag value in MEM stage
+ 
+begin
+
+-----state S2--------------------PC_mux-----------------------------
+ 	if( (P1( 15 downto 12) = "1000") or (P1( 15 downto 12) ="1001")) then	  --jal/jlr
+		control_store1 (1 downto 0) <= "01";   --(jump_mux_out)
+
+	elsif ( (P1(15 downto 12) = "1100") ) then	--beq 
+		control_store1 (1 downto 0) <= "10";   --(beq_mux_out)
+
+	else 
+		control_store1 (1 downto 0) <= "00";	--default (pc+1)
+	
+
+-----state S2------------------jump_mux------------------------------
+	if (P1( 15 downto 12) = "1000") then	  --jal
+		control_store1 (2) <= "0";  --(pc+imm.)
+
+	elsif (P1( 15 downto 12) = "1001") then   --jlr
+		control_store1 (2) <= "1";  --(reg-d2)
+
+
+-----state S3-----------------alu_a_mux------(forwarding included)---------------------------------------
+        if ((P1 (15 downto 12) = "0000") or (P1 (15 downto 12) = "0010")) then	--add/nand
+		
+		if( (P2(5 downto 3) = P1(8 downto 6)) or (P2(5 downto 3) = P1(11 downto 9))) then --first immed.
+			 control_store1(5 downto 3) <= "010");	--(P4_47-32)
+		elsif( (P3(5 downto 3) = P1(8 downto 6)) or (P3(5 downto 3) = P1(11 downto 9))) then --second immed.
+			 control_store1(5 downto 3) <= "111");	--(P5_47-32)
+
+--modify
+	elsif ((P1 (15 downto 12) = "0001")) then --adi
+
+		if( (P2(8 downto 6) = P1(8 downto 6)) or (P2(8 downto 6) = P1(11 downto 9))) then --first immed.
+			 control_store1(5 downto 3) <= "100");	--(P4_63-48)
+		elsif( (P3(8 downto 6) = P1(8 downto 6)) or (P3(8 downto 6) = P1(11 downto 9))) then --second immed.
+			 control_store1(5 downto 3) <= "110");	--(P5_63-48)
+	
+	elsif ((P2 (15 downto 12) = "0100")) then 	--lw  
+
+		if( ((P2(11 downto 9) = P1(8 downto 6)) or (P2(11 downto 9) = P1(11 downto 9))) and 
+		    ((P1 (15 downto 12) = "0000") or (P1 (15 downto 12) = "0001") or (P1 (15 downto 12) = "0010"))) then --first immed.
+			 control_store1(5 downto 3) <= "101");	--(P5_79-64)			--next instr add/nand/adi
+		else 
+			 control_store1(5 downto 3) <= "001");	--(P3_63-48)
+
+
+	elsif ((P1 (15 downto 12) = "0101")) then 	--sw 
+			control_store1(5 downto 3) <= "001");	--(P3_63-48)
+	
+
+	else 
+		control_store1(5 downto 3) <= "000");	--(P3_47-32)
+
+
+------state S2------------------alu_b_mux------------------------------------------------------------------------------
+	if ((P1 (15 downto 12) = "0000") or (P1 (15 downto 12) = "0010") or (P1 (15 downto 12) = "1100"))  then	--add/nand/beq
+		control_store1(7 downto 6) <= "00";     --(P3_63-48)
+	
+	elsif ((P1 (15 downto 12) = "0001") or (P1 (15 downto 12) = "0100") or (P1 (15 downto 12) = "0101")) then 	--adi/lw/sw
+		control_store1(7 downto 6) <= "01";     --(SE6_out)
+
+	elsif ((P1 (15 downto 12) = "0110") or (P1 (15 downto 12) = "0111")) then --lm/sm 
+		control_store1(7 downto 6) <= "10";     --(k)
+
+
+------state S2-----------------------C_en-----------------------------------------------------------------------
+	if ((P1 (15 downto 12) = "0000") or (P1 (15 downto 12) = "0001"))  then	--add/nand/adi
+		control_store1(8) <= "1";             ---8?
+	else
+		control_store1(8) <= "0";	       ---8?
+
+
+------state S2-----------------------Z_en-----------------------------------------------------------------------
+	if ((P1 (15 downto 12) = "0000") or (P1 (15 downto 12) = "0010") or (P1 (15 downto 12) = "0001"))  then	--add/nand/adi
+		control_store1(9) <= "1";             --9???
+
+--	elsif (	P4 (15 downto 12) = "0100")) then       --lw		(write in MEM stage)
+--		control_store1(9) <= "1"; 
+	else
+		control_store1(9) <= "0";		
+
+
+------state S4-----------------------beq_mux---------------------------------------------------------------------
+--	if ((P3 (15 downto 12) = "1100") and (alu_z = "1")) then      --taken branch
+--		beq_mux <= "1";	--(pc+imm.)
+--	else
+--		beq_mux <= "0";	--not taken(k=3)				--write in EX stage
+	
+
+------state S1------------------------alu_op--------------------------------------------------------------------
+	if ((P1( 15 downto 12) = "0000") or (P1( 15 downto 12) = "0001") or (P1( 15 downto 12) = "0100") or
+	    (P1( 15 downto 12) = "0101")) then 			--add/adi/lw/sw 
+		control_store1(11 downto 10) <= "00";	--add
+
+	elsif ((P1( 15 downto 12) = "1100")) then			--beq
+		control_store1(11 downto 10) <= "10";	--subtract
+	
+	elsif ((P1( 15 downto 12) = "0010")) then			--nand
+		control_store1(11 downto 10) <= "01";	--nand
+
+
+------state S1------------------------a3_mux--------------------------------------------------------------------	
+	if ((P1( 15 downto 12) = "0000") or (P1( 15 downto 12) = "0010") ) then   	--add/nand
+		control_store1(13 downto 12) <= "00";	--(P5_5-3)
+	
+	elsif ((P1( 15 downto 12) = "0001"))	--adi
+		control_store1(13 downto 12) <= "01";	--(P5_8-6)
+
+	elsif ((P1( 15 downto 12) = "0011") or (P1( 15 downto 12) = "0100") or (P1( 15 downto 12) = "1000") or 
+	       (P1( 15 downto 12) = "1001"))	   --lhi/lw/jal/jar
+		control_store1(13 downto 12) <= "10";	--(P5_11-9)
+
+
+-----state S1-------------------------d3_mux--------------------------------------------------------------------
+	if ((P1( 15 downto 12) = "0000") or (P1( 15 downto 12) = "0010") or (P1( 15 downto 12) = "0001")) then   	--add/nand/adi
+		control_store1(15 downto 14) <= "00";	--(P5_47-32)
+
+	elsif ((P1( 15 downto 12) = "0011"))	--lhi
+		control_store1(15 downto 14) <= "01";	--(P5_63-48)
+
+	elsif ((P1( 15 downto 12) = "0100"))	--lw
+		control_store1(15 downto 14) <= "10";	--(P5_79-64) 
+	
+	elsif ((P1( 15 downto 12) = "1000") or (P1( 15 downto 12) = "1001"))	    --jal/jlr
+		control_store1(15 downto 14) <= "11";	--(P5_31-16)
+
+------------------------------------rf_wr-----------------------------------------------------------------------
+	if( (P1(15 downto 12) = "0001") or (P1(15 downto 12) = "0011") or (P1(15 downto 12) = "0100")
+	   or (P1(15 downto 12) = "1000") or (P1(15 downto 12) = "1001")  or (P1(15 downto 12) = "0000") or (P1(15 downto 12) = "0010"))then
+		control_store2(0) <= '1';
+	else 
+		control_store2(0) <= '0';
+------------------------------------mem_wr-----------------------------------------------------------------------
+
+        if P1(15 downto 12) = "0101" then       ----add sm also
+		control_store2(1) <= '1';
+        else    
+		control_store2(1) <= '0';
+
+------------------------------------FLUSH(BEQ n JUMP)-----------------------------------------------------------
+--	if (P3( 15 downto 11) = "1100") then		--beq
+--		(P4b(xx) = "1") and (P4b(xx) = "1");
+		
+--	else
+--		(P4b(xx) = "0") and (P4b(xx) = "0");
+
+-----------------------------------------------------------------------
+	if ((P1( 15 downto 12) = "1000") or (P1( 15 downto 12) = "1001")) then	--jump
+		(P2_f = "1");
+		
+	else
+		(P2_f = "0");
+
+-----------------------------------------STALL-------------------------------------------------------------------
+
+
+
+end struct;
+

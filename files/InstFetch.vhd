@@ -1,0 +1,94 @@
+library std;
+use std.standard.all;
+library ieee;
+use ieee.std_logic_1164.all;      
+use ieee.numeric_std.all;
+-------------------------------------------------------------------
+entity InstFetch is   
+  port( clk, reset : in std_logic;
+	mux_sel : in std_logic_vector(1 downto 0);          -- from P3 or P4
+	mux_d1, mux_d2, one_or_zero : in std_logic_vector(15 downto 0);  -- from P3, P4
+	inst_mem_out, current_pc : out std_logic_vector(15 downto 0)       -- to P1
+);
+end entity;
+-----------------------------------------------------------------------------------------
+architecture struct of InstFetch is
+
+signal pc_in, pc_out, dummy, dummy_d, d0 : std_logic_vector(15 downto 0);
+--signal one_or_zero : std_logic; 
+---------------------------------------------------------------------------------------
+      component pc is
+  	port(clock, reset, pc_en : in std_logic;
+       	din : in std_logic_vector(15 downto 0);  
+       	dout : out std_logic_vector(15 downto 0)
+      	);
+	end component;
+-----------------------------------------------------------------------------------------
+      component mux4 is
+	generic(input_width : integer);
+	port(
+	d0 : std_logic_vector(input_width-1 downto 0);
+	d1 : std_logic_vector(input_width-1 downto 0);
+	d2 : std_logic_vector(input_width-1 downto 0);
+	d3 : std_logic_vector(input_width-1 downto 0);
+
+  	sel: in std_logic_vector(1 downto 0);
+	dout: out std_logic_vector(input_width-1 downto 0)
+	);
+	end component;
+----------------------------------------------------------------------------------------
+	component mux2 is
+	generic(input_width : integer);
+	port(
+	d0 : std_logic_vector(input_width-1 downto 0);
+	d1 : std_logic_vector(input_width-1 downto 0);
+	
+  	sel: in std_logic;
+	dout: out std_logic_vector(input_width-1 downto 0)
+	);
+	end component;
+
+---------------------------------------------------------------------------------------
+      component alu_add is
+	port(x,y : in std_logic_vector(15 downto 0);
+	z : out std_logic_vector(15 downto 0)
+	);
+	end component;
+---------------------------------------------------------------------------------------
+--memory always has its wr = 0 and rd = 1
+      component memoryinst is   
+    	port
+    	(
+    	rf_d1, mem_check          	: out std_logic_vector(15 downto 0);
+    	rf_d3          	: in  std_logic_vector(15 downto 0);
+   	wr   	        : in  std_logic;
+   	rd   	        : in  std_logic;
+    	rf_a1   	    : in  std_logic_vector(15 downto 0);
+    	rf_a3   	    : in  std_logic_vector(15 downto 0);
+   	clk,reset             : in  std_logic
+   	);
+	end component;
+----------------------------------------------------------------------------------------
+begin
+
+--mux_sel <= P3 or P4 depends. make a signal, wr if else.
+--mux_d1 <= jump output in RR stage
+--mux_d2 <= P4_out(xx downto xx)
+--inst_mem_out <= P1_in(xx downto xx)
+
+pc1: pc
+port map (clock => clk, reset => reset, pc_en => '1', din => pc_in, dout => pc_out); 
+---------------------------------------------------------------------------------------------------------
+pc_mux: mux4
+generic map (16)
+port map (sel => mux_sel, dout => pc_in, d0 => d0 , d1 => mux_d1, d2 => mux_d2, d3 => dummy );
+----------------------------------------------------------------------------------------------------------------------------------------
+inst_mem: memoryinst
+port map (rf_a1 => pc_out, rf_d1 => inst_mem_out, wr => '0', rd => '1', rf_a3 => dummy, rf_d3 => dummy_d, clk => clk, reset => reset);
+----------------------------------------------------------------------------------------------------------------------------------------
+alu_pc: alu_add
+port map (x=> pc_out, y=> one_or_zero, z=> d0); 
+------------------------------------------------------------------------ 
+current_pc <= pc_out;
+
+end struct;

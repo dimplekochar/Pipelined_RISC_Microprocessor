@@ -1,0 +1,735 @@
+# do datapath_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/shivi/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/SM.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:28 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/SM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity SM
+# -- Compiling architecture struct of SM
+# End time: 22:57:28 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/LM.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:28 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/LM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity LM
+# -- Compiling architecture struct of LM
+# End time: 22:57:28 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/memoryinst.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:28 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/memoryinst.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memoryinst
+# -- Compiling architecture struct of memoryinst
+# End time: 22:57:28 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/WriteBack.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:28 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/WriteBack.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity WriteBack
+# -- Compiling architecture struct of WriteBack
+# End time: 22:57:28 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg1+flag_en.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:28 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg1+flag_en.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tempreg1
+# -- Compiling architecture struct of tempreg1
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/signextender9.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/signextender9.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity signextender9
+# -- Compiling architecture struct of signextender9
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/signextender6.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/signextender6.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity signextender6
+# -- Compiling architecture struct of signextender6
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/shifter7.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/shifter7.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shifter7
+# -- Compiling architecture struct of shifter7
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/RegisterRead.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/RegisterRead.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterRead
+# -- Compiling architecture struct of RegisterRead
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/registerfile.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/registerfile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity registerfile
+# -- Compiling architecture struct of registerfile
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/pc.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/pc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity pc
+# -- Compiling architecture struct of pc
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/P5bReg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/P5bReg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P5bReg
+# -- Compiling architecture struct of P5bReg
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/P4bReg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/P4bReg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P4bReg
+# -- Compiling architecture struct of P4bReg
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/P4aReg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/P4aReg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P4aReg
+# -- Compiling architecture struct of P4aReg
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/P3bReg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/P3bReg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P3bReg
+# -- Compiling architecture struct of P3bReg
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/P3aReg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/P3aReg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P3aReg
+# -- Compiling architecture struct of P3aReg
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/P2aReg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/P2aReg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P2aReg
+# -- Compiling architecture struct of P2aReg
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/P1Reg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/P1Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P1Reg
+# -- Compiling architecture struct of P1Reg
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/mux8.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/mux8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux8
+# -- Compiling architecture struct of mux8
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/mux4.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/mux4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux4
+# -- Compiling architecture struct of mux4
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/mux2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/mux2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux2
+# -- Compiling architecture struct of mux2
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/memory.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory
+# -- Compiling architecture struct of memory
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/MemAccess.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/MemAccess.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MemAccess
+# -- Compiling architecture struct of MemAccess
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/InstFetch.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/InstFetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InstFetch
+# -- Compiling architecture struct of InstFetch
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/Execution.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/Execution.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Execution
+# -- Compiling architecture struct of Execution
+# End time: 22:57:29 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/datapath.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:29 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity datapath
+# -- Compiling architecture struct of datapath
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/ControlStore.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:30 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/ControlStore.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ControlStore
+# -- Compiling architecture struct of ControlStore
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/alu_add.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:30 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/alu_add.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity add_1bit
+# -- Compiling architecture Behave of add_1bit
+# -- Compiling entity alu_add
+# -- Compiling architecture behave of alu_add
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/alu.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:30 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/alu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package lab1
+# -- Compiling entity add1
+# -- Compiling architecture Behave of add1
+# -- Compiling entity mux1
+# -- Compiling architecture Behave of mux1
+# -- Loading package lab1
+# -- Compiling entity adder16
+# -- Compiling architecture behave of adder16
+# -- Compiling entity subtracter16
+# -- Compiling architecture behave of subtracter16
+# -- Compiling entity nand16
+# -- Compiling architecture behave of nand16
+# -- Compiling entity alu
+# -- Compiling architecture struct of alu
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/priorityencoder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:30 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/priorityencoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity priorityencoder
+# -- Compiling architecture struct of priorityencoder
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/decoder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:30 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity decoder
+# -- Compiling architecture struct of decoder
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/subtracter8.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:30 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/subtracter8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity add11
+# -- Compiling architecture Behave of add11
+# -- Compiling entity adder8
+# -- Compiling architecture behave of adder8
+# -- Compiling entity subtracter8
+# -- Compiling architecture behave of subtracter8
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg16.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:30 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tempreg16
+# -- Compiling architecture struct of tempreg16
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/shivi/Desktop/MICRO/Pipeline_29-11/P2bReg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 22:57:30 on Nov 29,2018
+# vcom -reportprogress 300 -93 -work work /home/shivi/Desktop/MICRO/Pipeline_29-11/P2bReg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P2bReg
+# -- Compiling architecture struct of P2bReg
+# End time: 22:57:30 on Nov 29,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vsim work.datapath
+# vsim work.datapath 
+# Start time: 22:57:42 on Nov 29,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.datapath(struct)
+# Loading work.instfetch(struct)
+# Loading work.pc(struct)
+# Loading work.mux4(struct)
+# Loading work.memoryinst(struct)
+# Loading work.alu_add(behave)
+# Loading work.add_1bit(behave)
+# Loading work.p1reg(struct)
+# Loading work.controlstore(struct)
+# Loading work.sm(struct)
+# Loading work.priorityencoder(struct)
+# Loading work.decoder(struct)
+# Loading work.subtracter8(behave)
+# Loading work.adder8(behave)
+# Loading work.add11(behave)
+# Loading work.tempreg16(struct)
+# Loading work.p2areg(struct)
+# Loading work.p2breg(struct)
+# Loading work.registerread(struct)
+# Loading work.registerfile(struct)
+# Loading work.signextender9(struct)
+# Loading work.mux2(struct)
+# Loading work.p3areg(struct)
+# Loading work.p3breg(struct)
+# Loading work.execution(struct)
+# Loading work.signextender6(struct)
+# Loading work.shifter7(struct)
+# Loading work.mux8(struct)
+# Loading work.lab1
+# Loading work.alu(struct)
+# Loading work.adder16(behave)
+# Loading work.add1(behave)
+# Loading work.nand16(behave)
+# Loading work.subtracter16(behave)
+# Loading work.tempreg1(struct)
+# Loading work.lm(struct)
+# Loading work.p4areg(struct)
+# Loading work.p4breg(struct)
+# Loading work.memaccess(struct)
+# Loading work.memory(struct)
+# Loading work.p5breg(struct)
+# Loading work.writeback(struct)
+add wave -position insertpoint  \
+sim:/datapath/clk \
+sim:/datapath/reset \
+sim:/datapath/clock_50 \
+sim:/datapath/p1_c_out \
+sim:/datapath/jump_add \
+sim:/datapath/beq_add \
+sim:/datapath/p2_c1_in \
+sim:/datapath/p2_c2_in \
+sim:/datapath/rf_d3_i \
+sim:/datapath/p3_d1_in \
+sim:/datapath/p3_d2_in \
+sim:/datapath/p3_c1_out \
+sim:/datapath/p4_c2_out \
+sim:/datapath/p3_c2_out \
+sim:/datapath/p5_c1_in \
+sim:/datapath/p5_c2_in \
+sim:/datapath/p5_c2_out \
+sim:/datapath/P5_memD \
+sim:/datapath/p4_alu_in \
+sim:/datapath/p2_c1_out \
+sim:/datapath/p2_c2_out \
+sim:/datapath/P2_SM_C \
+sim:/datapath/p2_dum \
+sim:/datapath/SM_D2 \
+sim:/datapath/p4_c1_in \
+sim:/datapath/p4_c1_out \
+sim:/datapath/p4_c2_in \
+sim:/datapath/P4_C1 \
+sim:/datapath/P4_C2 \
+sim:/datapath/beq_pc \
+sim:/datapath/p3_c1_in \
+sim:/datapath/p3_c2_in \
+sim:/datapath/p3_c3_in \
+sim:/datapath/p3_c3_out \
+sim:/datapath/one_zero \
+sim:/datapath/p4_7s_in \
+sim:/datapath/P5_C1 \
+sim:/datapath/P5_memDout_in \
+sim:/datapath/P5_PC \
+sim:/datapath/P5_IR \
+sim:/datapath/P5_ALU \
+sim:/datapath/P5_7S \
+sim:/datapath/P4_PC \
+sim:/datapath/P4_IR \
+sim:/datapath/dummy \
+sim:/datapath/SM_count \
+sim:/datapath/P1_IR \
+sim:/datapath/P1_PC \
+sim:/datapath/p1_p_out \
+sim:/datapath/p1_ir_out \
+sim:/datapath/P2_PC \
+sim:/datapath/P2_IR \
+sim:/datapath/P3_PC \
+sim:/datapath/P3_IR \
+sim:/datapath/P3_D1 \
+sim:/datapath/P3_D2 \
+sim:/datapath/P4_ALU \
+sim:/datapath/P4_7S \
+sim:/datapath/P4_D1 \
+sim:/datapath/rf_a3_i \
+sim:/datapath/SM_reg \
+sim:/datapath/LM_Reg \
+sim:/datapath/p3_c1_in_stall \
+sim:/datapath/alu_a_sel_sig \
+sim:/datapath/lm_stop \
+sim:/datapath/sm_stop \
+sim:/datapath/p1_wr \
+sim:/datapath/p2_wr \
+sim:/datapath/p3_wr \
+sim:/datapath/p4_wr \
+sim:/datapath/p1_wr_sig \
+sim:/datapath/p2_wr_sig \
+sim:/datapath/p3_wr_sig \
+sim:/datapath/p11_wr \
+sim:/datapath/p22_wr \
+sim:/datapath/p33_wr \
+sim:/datapath/carry \
+sim:/datapath/zero \
+sim:/datapath/alu_z \
+sim:/datapath/beq_mux \
+sim:/datapath/put_stall_sig \
+sim:/datapath/if_stall \
+sim:/datapath/P1_f \
+sim:/datapath/P2_f \
+sim:/datapath/P3_f \
+sim:/datapath/P4_f \
+sim:/datapath/P5_f \
+sim:/datapath/change_alu_amux \
+sim:/datapath/P1_flush \
+sim:/datapath/P2_flush \
+sim:/datapath/P3_flush \
+sim:/datapath/P4_flush \
+sim:/datapath/P5_flush \
+sim:/datapath/J_flush \
+sim:/datapath/beq_flush \
+sim:/datapath/J_f_dummy \
+sim:/datapath/beq_f_dummy \
+sim:/datapath/count_cmd \
+sim:/datapath/count_cmd1
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: unknown  Hostname: shivi-HP-Pavilion-Notebook  ProcessID: 2803
+#           Attempting to use alternate WLF file "./wlftqYZar4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqYZar4
+add wave -position insertpoint  \
+sim:/datapath/mAcc/data_mem/mem
+add wave -position insertpoint  \
+sim:/datapath/clk \
+sim:/datapath/reset \
+sim:/datapath/clock_50 \
+sim:/datapath/p1_c_out \
+sim:/datapath/jump_add \
+sim:/datapath/beq_add \
+sim:/datapath/p2_c1_in \
+sim:/datapath/p2_c2_in \
+sim:/datapath/rf_d3_i \
+sim:/datapath/p3_d1_in \
+sim:/datapath/p3_d2_in \
+sim:/datapath/p3_c1_out \
+sim:/datapath/p4_c2_out \
+sim:/datapath/p3_c2_out \
+sim:/datapath/p5_c1_in \
+sim:/datapath/p5_c2_in \
+sim:/datapath/p5_c2_out \
+sim:/datapath/P5_memD \
+sim:/datapath/p4_alu_in \
+sim:/datapath/p2_c1_out \
+sim:/datapath/p2_c2_out \
+sim:/datapath/P2_SM_C \
+sim:/datapath/p2_dum \
+sim:/datapath/SM_D2 \
+sim:/datapath/p4_c1_in \
+sim:/datapath/p4_c1_out \
+sim:/datapath/p4_c2_in \
+sim:/datapath/P4_C1 \
+sim:/datapath/P4_C2 \
+sim:/datapath/beq_pc \
+sim:/datapath/p3_c1_in \
+sim:/datapath/p3_c2_in \
+sim:/datapath/p3_c3_in \
+sim:/datapath/p3_c3_out \
+sim:/datapath/one_zero \
+sim:/datapath/p4_7s_in \
+sim:/datapath/P5_C1 \
+sim:/datapath/P5_memDout_in \
+sim:/datapath/P5_PC \
+sim:/datapath/P5_IR \
+sim:/datapath/P5_ALU \
+sim:/datapath/P5_7S \
+sim:/datapath/P4_PC \
+sim:/datapath/P4_IR \
+sim:/datapath/dummy \
+sim:/datapath/SM_count \
+sim:/datapath/P1_IR \
+sim:/datapath/P1_PC \
+sim:/datapath/p1_p_out \
+sim:/datapath/p1_ir_out \
+sim:/datapath/P2_PC \
+sim:/datapath/P2_IR \
+sim:/datapath/P3_PC \
+sim:/datapath/P3_IR \
+sim:/datapath/P3_D1 \
+sim:/datapath/P3_D2 \
+sim:/datapath/P4_ALU \
+sim:/datapath/P4_7S \
+sim:/datapath/P4_D1 \
+sim:/datapath/rf_a3_i \
+sim:/datapath/SM_reg \
+sim:/datapath/LM_Reg \
+sim:/datapath/p3_c1_in_stall \
+sim:/datapath/alu_a_sel_sig \
+sim:/datapath/lm_stop \
+sim:/datapath/sm_stop \
+sim:/datapath/p1_wr \
+sim:/datapath/p2_wr \
+sim:/datapath/p3_wr \
+sim:/datapath/p4_wr \
+sim:/datapath/p1_wr_sig \
+sim:/datapath/p2_wr_sig \
+sim:/datapath/p3_wr_sig \
+sim:/datapath/p11_wr \
+sim:/datapath/p22_wr \
+sim:/datapath/p33_wr \
+sim:/datapath/carry \
+sim:/datapath/zero \
+sim:/datapath/alu_z \
+sim:/datapath/beq_mux \
+sim:/datapath/put_stall_sig \
+sim:/datapath/if_stall \
+sim:/datapath/P1_f \
+sim:/datapath/P2_f \
+sim:/datapath/P3_f \
+sim:/datapath/P4_f \
+sim:/datapath/P5_f \
+sim:/datapath/change_alu_amux \
+sim:/datapath/P1_flush \
+sim:/datapath/P2_flush \
+sim:/datapath/P3_flush \
+sim:/datapath/P4_flush \
+sim:/datapath/P5_flush \
+sim:/datapath/J_flush \
+sim:/datapath/beq_flush \
+sim:/datapath/J_f_dummy \
+sim:/datapath/beq_f_dummy \
+sim:/datapath/count_cmd \
+sim:/datapath/count_cmd1
+force -freeze sim:/datapath/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/datapath/reset 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /datapath/RR/rf
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /datapath/RR/rf
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /datapath/iFetch/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /datapath/iFetch/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /datapath/RR/rf
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /datapath/RR/rf
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /datapath/iFetch/inst_mem
+force -freeze sim:/datapath/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 23:00:04 on Nov 29,2018, Elapsed time: 0:02:22
+# Errors: 4, Warnings: 9

@@ -1,0 +1,35 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/WriteBack.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/tempreg1+flag_en.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/signextender9.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/signextender6.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/shifter7.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/RegisterRead.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/registerfile.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/pc.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/P5bReg.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/P4bReg.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/P4aReg.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/P3bReg.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/P3aReg.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/P2aReg.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/P1Reg.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/mux8.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/mux4.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/mux2.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/memory.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/MemAccess.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/InstFetch.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/Execution.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/datapath.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/ControlStore.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/alu_add.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/alu.vhd}
+vcom -93 -work work {/home/nisha/Desktop/EE309 Micro Project /Project 2 - Pipeline/PIPELINE_26-11_datapath_ (2)/memoryinst.vhd}
+

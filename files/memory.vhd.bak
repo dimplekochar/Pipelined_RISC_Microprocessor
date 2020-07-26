@@ -1,0 +1,66 @@
+library std;
+use std.standard.all;
+library ieee;
+use ieee.std_logic_1164.all;      
+use ieee.numeric_std.all;
+entity memory is   
+    port
+    (
+    rf_d1, mem_check          	: out std_logic_vector(15 downto 0);
+    rf_d3          	: in  std_logic_vector(15 downto 0);
+    wr   	        : in  std_logic;
+    rd   	        : in  std_logic;
+    rf_a1   	    : in  std_logic_vector(15 downto 0);
+    rf_a3   	    : in  std_logic_vector(15 downto 0);
+    clk,reset             : in  std_logic
+    );
+end entity;
+
+architecture struct of memory is
+type memoryloc is array(0 to 31) of std_logic_vector(15 downto 0); --65536 16-bit registers
+signal mem : memoryloc := (others => "0000000000000000");
+begin
+
+    mem1: process(clk,wr,rd,reset)
+    begin
+			if (reset = '1') then
+			mem <= (others => "0000000000000000");
+		--	mem(0) <= "0000000000000000";
+		--	mem(1) <= "0000000001010001"; --adz
+		--	mem(2) <= "0000011100101000"; --add
+		--	mem(3) <= "0000110111001010"; --adc
+		--	mem(4) <= "0010000001010001"; --ndz
+		--	mem(5) <= "0010011100101000"; --ndd
+		--	mem(6) <= "0010110111001010"; --ndc
+		--	mem(7) <= "0001011100100110"; --adi
+		--	mem(8) <= "0011011100100110"; --lhi
+			--mem(1) <= "0100000001010010"; --lw
+--mem(1) <= "0101010011000111"; --sw
+	--		mem(5) <= "1000010000000010"; --jal
+		--	mem(6) <= "1001011100000000"; --jlr
+			--mem(4) <= "0100000001010010"; --lw
+		--	mem(2) <="1100000000000001"; --beq
+			--mem(2) <= "0100000001010010"; --lw
+		--	mem(7) <= "0111101000101010"; --sm
+			--mem(2) <= "0110100000001010"; --lm
+			--mem(9) <= "0000000000000000"; --nop
+			elsif rising_edge(clk) and (wr = '1') then 
+				mem(to_integer(unsigned(rf_a3))) <= rf_d3;
+			elsif (rd = '1') then
+			rf_d1 <= mem(to_integer(unsigned(rf_a1)));
+			end if;
+			
+
+
+--mem(0) <= "0000000001101000";
+--mem(2) <= "0000010011100010";
+--mem(4) <= "0000000001110001";
+--mem(8) <= "0001011111010010";
+
+
+    end process;
+	
+	
+	--mem_check<= mem(to_integer(unsigned(rf_a3)));
+
+end struct;

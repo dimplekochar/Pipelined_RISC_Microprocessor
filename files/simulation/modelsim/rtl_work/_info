@@ -1,0 +1,1762 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/shivi/Desktop/MICRO/Pipeline_29-11/simulation/modelsim
+Eadd1
+Z1 w1543265794
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8/home/shivi/Desktop/MICRO/Pipeline_29-11/alu.vhd
+Z6 F/home/shivi/Desktop/MICRO/Pipeline_29-11/alu.vhd
+l0
+L44
+V=<j8Ee[IoLaYFOLI>7MFz3
+!s100 Y@=FV>Y4`SC^QJMH?k[1n1
+Z7 OV;C;10.4d;61
+31
+Z8 !s110 1543512450
+!i10b 1
+Z9 !s108 1543512450.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/alu.vhd|
+Z11 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/alu.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1
+Abehave
+R2
+R3
+R4
+DEx4 work 4 add1 0 22 =<j8Ee[IoLaYFOLI>7MFz3
+l48
+L47
+VToS9_Z8<50o;TD=2FF==^1
+!s100 zma0@Ak:=UQ@LlLj9MgY>0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eadd11
+Z14 w1543325208
+R2
+R3
+R4
+R0
+Z15 8/home/shivi/Desktop/MICRO/Pipeline_29-11/subtracter8.vhd
+Z16 F/home/shivi/Desktop/MICRO/Pipeline_29-11/subtracter8.vhd
+l0
+L6
+VO`QET:X7_J><C1zCFc6HI1
+!s100 PV5o]J2B[B6[W0Z1kbEgX1
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/subtracter8.vhd|
+Z18 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/subtracter8.vhd|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 5 add11 0 22 O`QET:X7_J><C1zCFc6HI1
+l10
+L9
+VVMgBl=4^2ejd5@KiG8iEE1
+!s100 TLJ?GahWg;0=<RWT5HKzS0
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Eadd_1bit
+Z19 w1543155282
+R2
+R3
+R4
+R0
+Z20 8/home/shivi/Desktop/MICRO/Pipeline_29-11/alu_add.vhd
+Z21 F/home/shivi/Desktop/MICRO/Pipeline_29-11/alu_add.vhd
+l0
+L7
+VWb3PaDfdWAjkkd<VJOMai0
+!s100 8B:bRF[2Cn:4QlFQAJ=IG2
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/alu_add.vhd|
+Z23 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/alu_add.vhd|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 8 add_1bit 0 22 Wb3PaDfdWAjkkd<VJOMai0
+l11
+L10
+V^V?<22_>F:M[MJNAE;2JY2
+!s100 dQKCT?z1XbG<@OZWJRXJD0
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Eadder16
+R1
+Z24 DPx4 work 4 lab1 0 22 Y3CaXGH90mPdC_6jR03VP2
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L74
+V9F9N=aoWM9on<8TV]4Nl80
+!s100 ^d37znD^7^MLZ1eZ;mnl=3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehave
+R24
+R2
+R3
+R4
+DEx4 work 7 adder16 0 22 9F9N=aoWM9on<8TV]4Nl80
+l86
+L79
+V^k]o[m[TDfDAncD?<OSR12
+!s100 W[9aILJW9jC[OZc`E=Ll]1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eadder8
+R14
+R2
+R3
+R4
+R0
+R15
+R16
+l0
+L21
+Vn]j;a2:E7FiR3oV@YZ:AR1
+!s100 Hzez`Q_Di2V413HDA^6=K1
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 6 adder8 0 22 n]j;a2:E7FiR3oV@YZ:AR1
+l31
+L26
+VM>IYi4z[dH^i;@DJ62R^L0
+!s100 96U[JiJ3ccYo;R=:^9[Lh2
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Ealu
+R1
+R24
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L210
+VhH:2_>BQ8UJNhEJhh4`_N1
+!s100 gd9jmAJkP]^akGFd`=3a13
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Astruct
+R24
+R2
+R3
+R4
+DEx4 work 3 alu 0 22 hH:2_>BQ8UJNhEJhh4`_N1
+l229
+L219
+V]NB`5BTkiQ9kdL@KKF2ao3
+!s100 dzW6AK<LS<:QNmGj2_T[m3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ealu_add
+R19
+R2
+R3
+R4
+R0
+R20
+R21
+l0
+L23
+V@S1M1B<UjQC<A7^e9K3X`0
+!s100 5hO_]RY0A6emA9@b4>oB=0
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 7 alu_add 0 22 @S1M1B<UjQC<A7^e9K3X`0
+l35
+L28
+V0;L3S9EN0:en[gA:TjDJP3
+!s100 D2@D;J4T4WIXlOlIiF3J30
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Econtrolstore
+Z25 w1543512258
+R2
+R3
+R4
+R0
+Z26 8/home/shivi/Desktop/MICRO/Pipeline_29-11/ControlStore.vhd
+Z27 F/home/shivi/Desktop/MICRO/Pipeline_29-11/ControlStore.vhd
+l0
+L7
+VO@^SEI=;QRb8@QazFJAHo2
+!s100 e5<=aAnoU5`l>T;ZOX63g2
+R7
+31
+R8
+!i10b 1
+R9
+Z28 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/ControlStore.vhd|
+Z29 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/ControlStore.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 12 controlstore 0 22 O@^SEI=;QRb8@QazFJAHo2
+l44
+L20
+V_i;O:ODXD0MfRda^>cQ:N2
+!s100 34UQlkadR;kj:iQ74<Lb80
+R7
+31
+R8
+!i10b 1
+R9
+R28
+R29
+!i113 1
+R12
+R13
+Edatapath
+Z30 w1543508373
+R2
+R3
+R4
+R0
+Z31 8/home/shivi/Desktop/MICRO/Pipeline_29-11/datapath.vhd
+Z32 F/home/shivi/Desktop/MICRO/Pipeline_29-11/datapath.vhd
+l0
+L7
+VB>G0=PJOGW[OKnmUY5gb[2
+!s100 lAOW;gcjoQWDO^lB::WJ]3
+R7
+31
+R8
+!i10b 1
+Z33 !s108 1543512449.000000
+Z34 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/datapath.vhd|
+Z35 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/datapath.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 8 datapath 0 22 B>G0=PJOGW[OKnmUY5gb[2
+l158
+L14
+V`fR>BWYLLUDS`PUbYFoN]2
+!s100 l4?OMZ23H@j:lDJ?8BeJ=3
+R7
+31
+R8
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R12
+R13
+Edecoder
+Z36 w1542930244
+R2
+R3
+R4
+R0
+Z37 8/home/shivi/Desktop/MICRO/Pipeline_29-11/decoder.vhd
+Z38 F/home/shivi/Desktop/MICRO/Pipeline_29-11/decoder.vhd
+l0
+L6
+V;c<4M[6HaID7^F69O:z:10
+!s100 ??aQ?3N5o:M>6WA6kazJj1
+R7
+31
+R8
+!i10b 1
+R9
+Z39 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/decoder.vhd|
+Z40 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/decoder.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 7 decoder 0 22 ;c<4M[6HaID7^F69O:z:10
+l14
+L13
+V;9c?>[nX9O?0@UR?FgkNn2
+!s100 e^@ln_kC=fa^DezhaX=@:2
+R7
+31
+R8
+!i10b 1
+R9
+R39
+R40
+!i113 1
+R12
+R13
+Eexecution
+Z41 w1543505181
+R2
+R3
+R4
+R0
+Z42 8/home/shivi/Desktop/MICRO/Pipeline_29-11/Execution.vhd
+Z43 F/home/shivi/Desktop/MICRO/Pipeline_29-11/Execution.vhd
+l0
+L9
+V:Nh[L6^XYVM3NociU=mHV2
+!s100 =OIi06JRe@97K1EVEWYHe1
+R7
+31
+Z44 !s110 1543512449
+!i10b 1
+R33
+Z45 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/Execution.vhd|
+Z46 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/Execution.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 9 execution 0 22 :Nh[L6^XYVM3NociU=mHV2
+l115
+L22
+V^LPD9fY4YcgFI62`16Ri21
+!s100 LH4W]DVAmDmA@A0M0YUl?1
+R7
+31
+R44
+!i10b 1
+R33
+R45
+R46
+!i113 1
+R12
+R13
+Einstfetch
+Z47 w1543409293
+R2
+R3
+R4
+R0
+Z48 8/home/shivi/Desktop/MICRO/Pipeline_29-11/InstFetch.vhd
+Z49 F/home/shivi/Desktop/MICRO/Pipeline_29-11/InstFetch.vhd
+l0
+L7
+VFSC=F2`5b12JH;?^HP3Cc1
+!s100 =U8c0PcN^AiVLoU^i[QcO2
+R7
+31
+R44
+!i10b 1
+R33
+Z50 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/InstFetch.vhd|
+Z51 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/InstFetch.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 9 instfetch 0 22 FSC=F2`5b12JH;?^HP3Cc1
+l72
+L15
+VCGIJ1cRE?bfSKAgBP<K9:1
+!s100 n`LS9Xe6RB`WDKf[PX6_l1
+R7
+31
+R44
+!i10b 1
+R33
+R50
+R51
+!i113 1
+R12
+R13
+Plab1
+R2
+R3
+R4
+R1
+R0
+R5
+R6
+l0
+L6
+VY3CaXGH90mPdC_6jR03VP2
+!s100 KFJXJ8KnfeCnJj;jn6WR@3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Elm
+Z52 w1543453897
+R2
+R3
+R4
+R0
+Z53 8/home/shivi/Desktop/MICRO/Pipeline_29-11/LM.vhd
+Z54 F/home/shivi/Desktop/MICRO/Pipeline_29-11/LM.vhd
+l0
+L6
+VZaIZ>FYSh:PknBmM4MXk30
+!s100 8XkFTG25_UcK5j^9S5TG;0
+R7
+31
+Z55 !s110 1543512448
+!i10b 1
+Z56 !s108 1543512448.000000
+Z57 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/LM.vhd|
+Z58 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/LM.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 2 lm 0 22 ZaIZ>FYSh:PknBmM4MXk30
+l74
+L15
+VAha9hfBjD<L]kVHZ:YcOi1
+!s100 ]:UIb:_;Vk@IHUQ??=0T42
+R7
+31
+R55
+!i10b 1
+R56
+R57
+R58
+!i113 1
+R12
+R13
+Ememaccess
+Z59 w1543456559
+R2
+R3
+R4
+R0
+Z60 8/home/shivi/Desktop/MICRO/Pipeline_29-11/MemAccess.vhd
+Z61 F/home/shivi/Desktop/MICRO/Pipeline_29-11/MemAccess.vhd
+l0
+L7
+VEabY6B18@E?_nF=nT:fGh0
+!s100 <dlRW=R]<1QL[X[G<Y`la0
+R7
+31
+R44
+!i10b 1
+R33
+Z62 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/MemAccess.vhd|
+Z63 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/MemAccess.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 9 memaccess 0 22 EabY6B18@E?_nF=nT:fGh0
+l44
+L15
+VR3Jf=0c<<QmS5^2A@>P<50
+!s100 Xnnn3_nbAFVY34E<[gRFl0
+R7
+31
+R44
+!i10b 1
+R33
+R62
+R63
+!i113 1
+R12
+R13
+Ememory
+Z64 w1543481406
+R2
+R3
+R4
+R0
+Z65 8/home/shivi/Desktop/MICRO/Pipeline_29-11/memory.vhd
+Z66 F/home/shivi/Desktop/MICRO/Pipeline_29-11/memory.vhd
+l0
+L6
+VP1QSDKVDR6[mf1H>K`XTP1
+!s100 A<>InA4Un9j7nCYeb7RaZ2
+R7
+31
+R44
+!i10b 1
+R33
+Z67 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/memory.vhd|
+Z68 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/memory.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 6 memory 0 22 P1QSDKVDR6[mf1H>K`XTP1
+l22
+L19
+Vga:dCI5nLlQ`_BjcElLY41
+!s100 <mAQKUmkLPTefzzFCS1B]1
+R7
+31
+R44
+!i10b 1
+R33
+R67
+R68
+!i113 1
+R12
+R13
+Ememoryinst
+Z69 w1543512113
+R2
+R3
+R4
+R0
+Z70 8/home/shivi/Desktop/MICRO/Pipeline_29-11/memoryinst.vhd
+Z71 F/home/shivi/Desktop/MICRO/Pipeline_29-11/memoryinst.vhd
+l0
+L6
+V?ag@;Y@kX@h0Tjlc4Lzze2
+!s100 ek=GfUzif]l:AFk_S<MV=3
+R7
+31
+R55
+!i10b 1
+R56
+Z72 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/memoryinst.vhd|
+Z73 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/memoryinst.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 10 memoryinst 0 22 ?ag@;Y@kX@h0Tjlc4Lzze2
+l22
+L19
+VZoD2W1:og0;g9;IN@6KmM2
+!s100 RZUYJc^j9GQm;N3N;BCg32
+R7
+31
+R55
+!i10b 1
+R56
+R72
+R73
+!i113 1
+R12
+R13
+Emux1
+R1
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L59
+Vh7o7F?9bbTgKIe;PXO3=n0
+!s100 h@aTB4k85IIY8oTF_<^FA2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 4 mux1 0 22 h7o7F?9bbTgKIe;PXO3=n0
+l64
+L63
+VmmTHX:9RDSB3NN126nABo2
+!s100 DUAGB6HonOlUYM9Noa<6b0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emux2
+Z74 w1540926974
+R2
+R3
+R4
+R0
+Z75 8/home/shivi/Desktop/MICRO/Pipeline_29-11/mux2.vhd
+Z76 F/home/shivi/Desktop/MICRO/Pipeline_29-11/mux2.vhd
+l0
+L7
+VKB9dIhzLYD:H<JRbo2SH`0
+!s100 WD`=H7ULo:A<Xi>jjdW^k2
+R7
+31
+R44
+!i10b 1
+R33
+Z77 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/mux2.vhd|
+Z78 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/mux2.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 4 mux2 0 22 KB9dIhzLYD:H<JRbo2SH`0
+l19
+L18
+Vj?>;CkHCh?eH@_NK><l^]3
+!s100 Yn=`JCFGlBz69gHlZKIHK1
+R7
+31
+R44
+!i10b 1
+R33
+R77
+R78
+!i113 1
+R12
+R13
+Emux4
+Z79 w1541140396
+R2
+R3
+R4
+R0
+Z80 8/home/shivi/Desktop/MICRO/Pipeline_29-11/mux4.vhd
+Z81 F/home/shivi/Desktop/MICRO/Pipeline_29-11/mux4.vhd
+l0
+L7
+VIXMldRSM@ne2ffC]::0zj3
+!s100 >i^=RX:HTifcn2;H>YEQO2
+R7
+31
+R44
+!i10b 1
+R33
+Z82 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/mux4.vhd|
+Z83 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/mux4.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 4 mux4 0 22 IXMldRSM@ne2ffC]::0zj3
+l21
+L20
+V`Bz51iB=7Z56gHILJeT_N2
+!s100 E]9MTjjalZU:R8gaX8M]K2
+R7
+31
+R44
+!i10b 1
+R33
+R82
+R83
+!i113 1
+R12
+R13
+Emux8
+Z84 w1541140330
+R2
+R3
+R4
+R0
+Z85 8/home/shivi/Desktop/MICRO/Pipeline_29-11/mux8.vhd
+Z86 F/home/shivi/Desktop/MICRO/Pipeline_29-11/mux8.vhd
+l0
+L7
+VCJO6fEMWV@gBXW>J]l@5c2
+!s100 ok@fgS0oQ7;H7^F2>GBei1
+R7
+31
+R44
+!i10b 1
+R33
+Z87 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/mux8.vhd|
+Z88 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/mux8.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 4 mux8 0 22 CJO6fEMWV@gBXW>J]l@5c2
+l26
+L25
+VmZYhGgM38KHTzJ:nn`2MQ0
+!s100 l:i^nZFffg]<RzW<F3cVd1
+R7
+31
+R44
+!i10b 1
+R33
+R87
+R88
+!i113 1
+R12
+R13
+Enand16
+R1
+R24
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L165
+VW]I]0jMN]AM@J2BKKNM1g2
+!s100 4GS6iLFEXU8[XMEh8Kj=Y3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehave
+R24
+R2
+R3
+R4
+DEx4 work 6 nand16 0 22 W]I]0jMN]AM@J2BKKNM1g2
+l172
+L170
+VP=f]9ScYI_91Aj:zlUi470
+!s100 Saz4RAl>P[z]bFI7K9mOl3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ep1reg
+Z89 w1543430802
+R2
+R3
+R4
+R0
+Z90 8/home/shivi/Desktop/MICRO/Pipeline_29-11/P1Reg.vhd
+Z91 F/home/shivi/Desktop/MICRO/Pipeline_29-11/P1Reg.vhd
+l0
+L7
+VYgQd5F?bCFCC>0dW3^a0]3
+!s100 DoiE1T5C]JGQY3A7CB@`V0
+R7
+31
+R44
+!i10b 1
+R33
+Z92 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/P1Reg.vhd|
+Z93 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/P1Reg.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 5 p1reg 0 22 YgQd5F?bCFCC>0dW3^a0]3
+l20
+L15
+VTcQ@Q=2a7hVRRebk@2>D11
+!s100 ZBmgCEj_>1GlH2hV;7b9M3
+R7
+31
+R44
+!i10b 1
+R33
+R92
+R93
+!i113 1
+R12
+R13
+Ep2areg
+Z94 w1543263886
+R2
+R3
+R4
+R0
+Z95 8/home/shivi/Desktop/MICRO/Pipeline_29-11/P2aReg.vhd
+Z96 F/home/shivi/Desktop/MICRO/Pipeline_29-11/P2aReg.vhd
+l0
+L7
+VXI?A5?_VGUEhk7jdPC1SF2
+!s100 gMKnE5o5:oSRGdBRR8mdn3
+R7
+31
+R44
+!i10b 1
+R33
+Z97 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/P2aReg.vhd|
+Z98 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/P2aReg.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 6 p2areg 0 22 XI?A5?_VGUEhk7jdPC1SF2
+l20
+L15
+Vj[Xic:6Ez<;o0mGD2MU6;3
+!s100 1H0IgFXP9;?WAO:dMIQ:00
+R7
+31
+R44
+!i10b 1
+R33
+R97
+R98
+!i113 1
+R12
+R13
+Ep2breg
+Z99 w1543357672
+R2
+R3
+R4
+R0
+Z100 8/home/shivi/Desktop/MICRO/Pipeline_29-11/P2bReg.vhd
+Z101 F/home/shivi/Desktop/MICRO/Pipeline_29-11/P2bReg.vhd
+l0
+L7
+VRmMf`TILFFJ9_]eaC^CAE2
+!s100 K7jh5??H5@^BBWAiH_3;Q3
+R7
+31
+R8
+!i10b 1
+R9
+Z102 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/P2bReg.vhd|
+Z103 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/P2bReg.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 6 p2breg 0 22 RmMf`TILFFJ9_]eaC^CAE2
+l20
+L15
+VmZH5BcAP6o_XKWITCFR513
+!s100 fJIAAf_[=oK?P?A9zVS6b3
+R7
+31
+R8
+!i10b 1
+R9
+R102
+R103
+!i113 1
+R12
+R13
+Ep3areg
+Z104 w1543167938
+R2
+R3
+R4
+R0
+Z105 8/home/shivi/Desktop/MICRO/Pipeline_29-11/P3aReg.vhd
+Z106 F/home/shivi/Desktop/MICRO/Pipeline_29-11/P3aReg.vhd
+l0
+L7
+V_V<P84e3eWFY=EiiF]nN@1
+!s100 m1^1hQB@Ec9Yjc64cbKlh2
+R7
+31
+R44
+!i10b 1
+R33
+Z107 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/P3aReg.vhd|
+Z108 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/P3aReg.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 6 p3areg 0 22 _V<P84e3eWFY=EiiF]nN@1
+l20
+L15
+VDfB_4VE<IEN[J^G<YgVVH3
+!s100 kY8:cneQYcnnLj5[I@fO@3
+R7
+31
+R44
+!i10b 1
+R33
+R107
+R108
+!i113 1
+R12
+R13
+Ep3breg
+Z109 w1543354269
+R2
+R3
+R4
+R0
+Z110 8/home/shivi/Desktop/MICRO/Pipeline_29-11/P3bReg.vhd
+Z111 F/home/shivi/Desktop/MICRO/Pipeline_29-11/P3bReg.vhd
+l0
+L7
+V<B0C7<Q@lEVo^XJfGTWiM3
+!s100 P4dSmc>0[S47_dn:L3_J=3
+R7
+31
+R44
+!i10b 1
+R33
+Z112 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/P3bReg.vhd|
+Z113 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/P3bReg.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 6 p3breg 0 22 <B0C7<Q@lEVo^XJfGTWiM3
+l20
+L15
+VaY6F@Ok?H7Of[YFnXC9Hz0
+!s100 zP;[ZZF>L]M9QJYEmmSDc0
+R7
+31
+R44
+!i10b 1
+R33
+R112
+R113
+!i113 1
+R12
+R13
+Ep4areg
+Z114 w1543212682
+R2
+R3
+R4
+R0
+Z115 8/home/shivi/Desktop/MICRO/Pipeline_29-11/P4aReg.vhd
+Z116 F/home/shivi/Desktop/MICRO/Pipeline_29-11/P4aReg.vhd
+l0
+L7
+VJNB`<]>@?oJLfW6PZ0^d?3
+!s100 fTo@i<Z^=dlYT;4>4nKaY3
+R7
+31
+R44
+!i10b 1
+R33
+Z117 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/P4aReg.vhd|
+Z118 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/P4aReg.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 6 p4areg 0 22 JNB`<]>@?oJLfW6PZ0^d?3
+l20
+L15
+VC?o@Rl<3k@J59`5C9ag6@3
+!s100 _>TK5<ZGW6JSDFF^[a[e:0
+R7
+31
+R44
+!i10b 1
+R33
+R117
+R118
+!i113 1
+R12
+R13
+Ep4breg
+R104
+R2
+R3
+R4
+R0
+Z119 8/home/shivi/Desktop/MICRO/Pipeline_29-11/P4bReg.vhd
+Z120 F/home/shivi/Desktop/MICRO/Pipeline_29-11/P4bReg.vhd
+l0
+L7
+VGMhPcFcL@FG3Q3ZM[enzn3
+!s100 V8A9M5OV3Bl7h>zbmI<A<3
+R7
+31
+R44
+!i10b 1
+R33
+Z121 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/P4bReg.vhd|
+Z122 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/P4bReg.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 6 p4breg 0 22 GMhPcFcL@FG3Q3ZM[enzn3
+l20
+L15
+V?5I@XPGO[ce@oo4F^h3CA1
+!s100 <0cZ;FMknm<>z76WjkiY42
+R7
+31
+R44
+!i10b 1
+R33
+R121
+R122
+!i113 1
+R12
+R13
+Ep5breg
+Z123 w1543356622
+R2
+R3
+R4
+R0
+Z124 8/home/shivi/Desktop/MICRO/Pipeline_29-11/P5bReg.vhd
+Z125 F/home/shivi/Desktop/MICRO/Pipeline_29-11/P5bReg.vhd
+l0
+L7
+V8og4jW1EEgLNPP5^9lZUh1
+!s100 OcSX:QU@O:MKJDLO5z2;_3
+R7
+31
+R44
+!i10b 1
+R33
+Z126 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/P5bReg.vhd|
+Z127 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/P5bReg.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 6 p5breg 0 22 8og4jW1EEgLNPP5^9lZUh1
+l20
+L15
+V=bl>H?bXOkC9jLE?bYUbl1
+!s100 ln4QlCjNO01@EjSl6YP;70
+R7
+31
+R44
+!i10b 1
+R33
+R126
+R127
+!i113 1
+R12
+R13
+Epc
+Z128 w1543084766
+R2
+R3
+R4
+R0
+Z129 8/home/shivi/Desktop/MICRO/Pipeline_29-11/pc.vhd
+Z130 F/home/shivi/Desktop/MICRO/Pipeline_29-11/pc.vhd
+l0
+L7
+V;RTg@FCkVQ3_NOT?odkPd0
+!s100 1D`;:X0;Ol7RJAQjgbn=<0
+R7
+31
+R44
+!i10b 1
+R33
+Z131 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/pc.vhd|
+Z132 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/pc.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 2 pc 0 22 ;RTg@FCkVQ3_NOT?odkPd0
+l15
+L14
+VM]eo]EHENXjRZBcZEhfM]0
+!s100 k68ZHIHghFL4AF15`MeW@2
+R7
+31
+R44
+!i10b 1
+R33
+R131
+R132
+!i113 1
+R12
+R13
+Epriorityencoder
+Z133 w1542930190
+R2
+R3
+R4
+R0
+Z134 8/home/shivi/Desktop/MICRO/Pipeline_29-11/priorityencoder.vhd
+Z135 F/home/shivi/Desktop/MICRO/Pipeline_29-11/priorityencoder.vhd
+l0
+L6
+Vj?RBXS];C8X4HU11DXS_H1
+!s100 SE^IeFG9l8PR86jfI6f7R0
+R7
+31
+R8
+!i10b 1
+R9
+Z136 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/priorityencoder.vhd|
+Z137 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/priorityencoder.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 15 priorityencoder 0 22 j?RBXS];C8X4HU11DXS_H1
+l14
+L13
+VN;=VbeQOz7TSd7z_WORA^0
+!s100 5K=?>]^mZ?8VNaNEjLeSW2
+R7
+31
+R8
+!i10b 1
+R9
+R136
+R137
+!i113 1
+R12
+R13
+Eregisterfile
+Z138 w1543512141
+R2
+R3
+R4
+R0
+Z139 8/home/shivi/Desktop/MICRO/Pipeline_29-11/registerfile.vhd
+Z140 F/home/shivi/Desktop/MICRO/Pipeline_29-11/registerfile.vhd
+l0
+L7
+V=H8;X>MFFQ>>hgl]D9K7c1
+!s100 LN7R<H>SlkKWDLaFnfJ9[0
+R7
+31
+R44
+!i10b 1
+R33
+Z141 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/registerfile.vhd|
+Z142 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/registerfile.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 12 registerfile 0 22 =H8;X>MFFQ>>hgl]D9K7c1
+l25
+L22
+V]2Ta:8ogXKZI_ESo;DIMI0
+!s100 gcAKSU1E3Nngb20o492==3
+R7
+31
+R44
+!i10b 1
+R33
+R141
+R142
+!i113 1
+R12
+R13
+Eregisterread
+Z143 w1543399967
+R2
+R3
+R4
+R0
+Z144 8/home/shivi/Desktop/MICRO/Pipeline_29-11/RegisterRead.vhd
+Z145 F/home/shivi/Desktop/MICRO/Pipeline_29-11/RegisterRead.vhd
+l0
+L8
+Vjn;GC3=h[PnmhAdQ9oCDe0
+!s100 ?W4QA82G9gaG117Ei0Mmf2
+R7
+31
+R44
+!i10b 1
+R33
+Z146 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/RegisterRead.vhd|
+Z147 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/RegisterRead.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 12 registerread 0 22 jn;GC3=h[PnmhAdQ9oCDe0
+l64
+L20
+Vb>]<FUnNRM5Lhg[W9N=4H3
+!s100 nkRoVHO;>GFc]6aXL0loW1
+R7
+31
+R44
+!i10b 1
+R33
+R146
+R147
+!i113 1
+R12
+R13
+Eshifter7
+Z148 w1540643730
+R2
+R3
+R4
+R0
+Z149 8/home/shivi/Desktop/MICRO/Pipeline_29-11/shifter7.vhd
+Z150 F/home/shivi/Desktop/MICRO/Pipeline_29-11/shifter7.vhd
+l0
+L7
+VGKTcGoOd2am?=6hHhk4iB1
+!s100 `?AE<Rej7KZ?A[Q9SW`1L3
+R7
+31
+R44
+!i10b 1
+R33
+Z151 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/shifter7.vhd|
+Z152 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/shifter7.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 8 shifter7 0 22 GKTcGoOd2am?=6hHhk4iB1
+l15
+L13
+VgV4Sd;`ALHJHdASh4^n4@1
+!s100 KT@fMM>iZ:5i7C6zc0?4`2
+R7
+31
+R44
+!i10b 1
+R33
+R151
+R152
+!i113 1
+R12
+R13
+Esignextender6
+Z153 w1540651184
+R2
+R3
+R4
+R0
+Z154 8/home/shivi/Desktop/MICRO/Pipeline_29-11/signextender6.vhd
+Z155 F/home/shivi/Desktop/MICRO/Pipeline_29-11/signextender6.vhd
+l0
+L7
+VSOQ1V:9<J;GA?Go<XSRYh1
+!s100 i`dnhhDB2l[4zmA<]^n_<2
+R7
+31
+R44
+!i10b 1
+R33
+Z156 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/signextender6.vhd|
+Z157 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/signextender6.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 13 signextender6 0 22 SOQ1V:9<J;GA?Go<XSRYh1
+l16
+L14
+V5eL>fM0Y^7he;4HdYO[IM2
+!s100 L9DKJ?Y[<X?bFGzdFl6me0
+R7
+31
+R44
+!i10b 1
+R33
+R156
+R157
+!i113 1
+R12
+R13
+Esignextender9
+Z158 w1540651196
+R2
+R3
+R4
+R0
+Z159 8/home/shivi/Desktop/MICRO/Pipeline_29-11/signextender9.vhd
+Z160 F/home/shivi/Desktop/MICRO/Pipeline_29-11/signextender9.vhd
+l0
+L7
+VLd7h_NK3d7GXg52IPIhCV0
+!s100 1L[JE>_JIBUhP_CnjZS`>3
+R7
+31
+R44
+!i10b 1
+R33
+Z161 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/signextender9.vhd|
+Z162 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/signextender9.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 13 signextender9 0 22 Ld7h_NK3d7GXg52IPIhCV0
+l16
+L14
+VJa[4RZB37>oA_A5PzMlMX3
+!s100 SZ:MLQJG6fA_35k_G<GnG0
+R7
+31
+R44
+!i10b 1
+R33
+R161
+R162
+!i113 1
+R12
+R13
+Esm
+Z163 w1543453908
+R2
+R3
+R4
+R0
+Z164 8/home/shivi/Desktop/MICRO/Pipeline_29-11/SM.vhd
+Z165 F/home/shivi/Desktop/MICRO/Pipeline_29-11/SM.vhd
+l0
+L6
+VmcZBL9_:WY;XjffAD@obh1
+!s100 [`0TEI1VnPdcAG2TWW>R71
+R7
+31
+R55
+!i10b 1
+R56
+Z166 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/SM.vhd|
+Z167 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/SM.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 2 sm 0 22 mcZBL9_:WY;XjffAD@obh1
+l74
+L15
+VQ:=1Tj:_JLjBUmnF6G:oZ2
+!s100 `OFGz0VNC6:d4;]z3@QVk1
+R7
+31
+R55
+!i10b 1
+R56
+R166
+R167
+!i113 1
+R12
+R13
+Esubtracter16
+R1
+R24
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L123
+V^77icUT[giUH]Sa4l[VHn3
+!s100 K;74z]^6=FUz51EJE@54X3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehave
+R24
+R2
+R3
+R4
+DEx4 work 12 subtracter16 0 22 ^77icUT[giUH]Sa4l[VHn3
+l138
+L128
+VmZICdWgZ15<SiJlLKWYj?1
+!s100 mY`:<B4V`K60<UL58]U^43
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Esubtracter8
+R14
+R2
+R3
+R4
+R0
+R15
+R16
+l0
+L60
+VeNhgSB9Lc0j17]VZe2TH<2
+!s100 <2=8A2l]BZ=[En48KNM=m3
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 11 subtracter8 0 22 eNhgSB9Lc0j17]VZe2TH<2
+l73
+L65
+V89o4R:=EGCb_c0aY[XX8M1
+!s100 Q]eSV6>_8MjH4NUBaBDQi1
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Etempreg1
+Z168 w1541372228
+R2
+R3
+R4
+R0
+Z169 8/home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg1+flag_en.vhd
+Z170 F/home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg1+flag_en.vhd
+l0
+L7
+VSY2OQOg2o[B[n>c2_2jkl0
+!s100 liOnJ<V[W<TzmjUTO1Y5X2
+R7
+31
+R44
+!i10b 1
+R56
+Z171 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg1+flag_en.vhd|
+Z172 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg1+flag_en.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 8 tempreg1 0 22 SY2OQOg2o[B[n>c2_2jkl0
+l16
+L15
+V<MbkXWEohSHHh94<;iQOe0
+!s100 oGm_hK`d2Tc0M>kT_E1JV3
+R7
+31
+R44
+!i10b 1
+R56
+R171
+R172
+!i113 1
+R12
+R13
+Etempreg16
+Z173 w1543318962
+R2
+R3
+R4
+R0
+Z174 8/home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg16.vhd
+Z175 F/home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg16.vhd
+l0
+L7
+V<Xk9g?HVbQT6m>SV<4XFX2
+!s100 EYdzif9:0c_^eCnaC08Y93
+R7
+31
+R8
+!i10b 1
+R9
+Z176 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg16.vhd|
+Z177 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/tempreg16.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 9 tempreg16 0 22 <Xk9g?HVbQT6m>SV<4XFX2
+l15
+L14
+Vm8bJ7J6kDO=9:V7AVL^;P2
+!s100 aD;MWZkl^^Ch81n2UO2173
+R7
+31
+R8
+!i10b 1
+R9
+R176
+R177
+!i113 1
+R12
+R13
+Ewriteback
+Z178 w1543365092
+R2
+R3
+R4
+R0
+Z179 8/home/shivi/Desktop/MICRO/Pipeline_29-11/WriteBack.vhd
+Z180 F/home/shivi/Desktop/MICRO/Pipeline_29-11/WriteBack.vhd
+l0
+L8
+VMm8?Sj=>hD2ajZV@;Nk591
+!s100 GXcJZ6;]6=ROWZ5:[cVX<3
+R7
+31
+R55
+!i10b 1
+R56
+Z181 !s90 -reportprogress|300|-93|-work|work|/home/shivi/Desktop/MICRO/Pipeline_29-11/WriteBack.vhd|
+Z182 !s107 /home/shivi/Desktop/MICRO/Pipeline_29-11/WriteBack.vhd|
+!i113 1
+R12
+R13
+Astruct
+R2
+R3
+R4
+DEx4 work 9 writeback 0 22 Mm8?Sj=>hD2ajZV@;Nk591
+l38
+L20
+V=9dF?gfIfRfWBLE92U6LQ2
+!s100 jCe8GYEWe?1Un5PGeY2Jg1
+R7
+31
+R55
+!i10b 1
+R56
+R181
+R182
+!i113 1
+R12
+R13

@@ -1,0 +1,102 @@
+library std;
+use std.standard.all;
+library ieee;
+use ieee.std_logic_1164.all;      
+use ieee.numeric_std.all;
+
+--------------------------------------------------------------------------------------
+entity RegisterRead is   
+  port( clk, reset, mux_sel, write1,c,z: in std_logic;
+	rf_a1_in, rf_a2_in, rf_a3_in : in std_logic_vector(2 downto 0);
+	rf_d3_in, pc_in : in std_logic_vector(15 downto 0);
+	imm : in std_logic_vector(8 downto 0);
+	Reg_sm : in std_logic_vector(2 downto 0);
+	ir_op : in std_logic_vector(3 downto 0);
+	rf_d1_out, rf_d2_out, jump : out std_logic_vector(15 downto 0)
+
+);
+end entity;
+--------------------------------------------------------------------------------------
+architecture struct of RegisterRead is
+
+signal JAL, se9_out, d2_out : std_logic_vector(15 downto 0);
+signal rf_a2_add : std_logic_vector(2 downto 0);
+---------------------------------------------------------------------------------------
+      component alu_add is
+	port(x,y : in std_logic_vector(15 downto 0);
+	z : out std_logic_vector(15 downto 0)
+	);
+	end component;
+--------------------------------------------------------------------------------------
+	component mux2 is
+	generic(input_width : integer);
+	port(
+		d0 : std_logic_vector(input_width-1 downto 0);
+		d1 : std_logic_vector(input_width-1  downto 0);
+
+	  	sel: in std_logic;
+		dout: out std_logic_vector(input_width-1 downto 0)
+	);
+	end component;
+--------------------------------------------------------------------------------------
+	component registerfile is   ---need to change RF code remove r_outs
+	    port
+	    (
+	    rf_d1          	: out std_logic_vector(15 downto 0);
+	    rf_d2          	: out std_logic_vector(15 downto 0);
+	    rf_d3          	: in  std_logic_vector(15 downto 0);
+	    write1   	        : in  std_logic;
+	    rf_a1   	    : in  std_logic_vector(2 downto 0);
+	    rf_a2	    : in  std_logic_vector(2 downto 0);
+	    rf_a3   	    : in  std_logic_vector(2 downto 0);
+	    clk,reset             : in  std_logic
+		 
+	    );
+	end component;
+------------------------------------------------------------------------------------------------------------------
+	component signextender9 is
+	port(
+	 	din 	: in STD_LOGIC_VECTOR(8 downto 0);
+	 	dout	: out STD_LOGIC_VECTOR(15 downto 0)
+	 	);
+	end component;	
+---------------------------------------------------------------------------------------------------------------------
+begin
+
+--mux_sel <= P2
+--rf_a1_in <= P2
+--rf_a2_in <= P2
+--rf_d1_out to P3
+--rf_d2_out to p3
+--write1 <= P5 
+--rf_a3_in <= through mux from writeback 
+--rf_d3_in <= through mux from writeback
+--pc_in <= P2
+--imm <= P2
+--For JLR RegB value in rf_d2_out
+--jump output goes to pc_mux in instr_fetch
+
+rf: registerfile
+port map (rf_a1 => rf_a1_in, rf_a2 => rf_a2_add, rf_d1 => rf_d1_out, rf_d2 => d2_out, write1 => write1, rf_a3 => rf_a3_in, rf_d3 => rf_d3_in , clk => clk, reset => reset);
+----------------------------------------------------------------------------------------------------------------------------------------
+alu_jump: alu_add
+port map (x=> pc_in , y=> se9_out, z=> JAL);
+--------------------------------------------------------------------------------------------------------------------------------------
+se9: signextender9
+port map (din => imm, dout => se9_out);
+--------------------------------------------------------------------------------------------------------------------------------------
+jump_mux: mux2
+generic map (16)
+port map (sel => mux_sel, d0 => JAL, d1 => d2_out, dout => jump);
+------------------------------------------------------------------
+rf_d2_out <= d2_out;
+
+a: process(clk)
+begin
+if(ir_op = "0111") then
+	rf_a2_add <= Reg_sm;
+else rf_a2_add <= rf_a2_in;
+end if;
+end process a;
+
+end struct;

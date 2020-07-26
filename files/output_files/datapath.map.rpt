@@ -1,0 +1,1284 @@
+Analysis & Synthesis report for datapath
+Thu Nov 29 23:14:39 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: InstFetch:iFetch|mux4:pc_mux
+ 10. Parameter Settings for User Entity Instance: RegisterRead:RR|mux2:jump_mux
+ 11. Parameter Settings for User Entity Instance: Execution:exec|mux2:beq_mux
+ 12. Parameter Settings for User Entity Instance: Execution:exec|mux8:alu_a_mux
+ 13. Parameter Settings for User Entity Instance: Execution:exec|mux4:alu_b_mux
+ 14. Parameter Settings for User Entity Instance: WriteBack:WB|mux4:rf_a3_mux
+ 15. Parameter Settings for User Entity Instance: WriteBack:WB|mux4:rf_d3_mux
+ 16. Port Connectivity Checks: "P5bReg:P5b"
+ 17. Port Connectivity Checks: "P4aReg:P5a"
+ 18. Port Connectivity Checks: "MemAccess:mAcc|memory:data_mem"
+ 19. Port Connectivity Checks: "MemAccess:mAcc"
+ 20. Port Connectivity Checks: "P2bReg:P4c"
+ 21. Port Connectivity Checks: "P4bReg:P4b"
+ 22. Port Connectivity Checks: "Execution:exec|LM:LM1|alu_add:ctr_add"
+ 23. Port Connectivity Checks: "Execution:exec|LM:LM1|subtracter8:sub"
+ 24. Port Connectivity Checks: "Execution:exec|alu:alu_main|subtracter16:subtractersixteen|adder16:a1"
+ 25. Port Connectivity Checks: "Execution:exec|alu:alu_main|adder16:addersixteen|add1:a0"
+ 26. Port Connectivity Checks: "Execution:exec|mux2:beq_mux"
+ 27. Port Connectivity Checks: "P3bReg:P3b"
+ 28. Port Connectivity Checks: "P2aReg:P2a"
+ 29. Port Connectivity Checks: "ControlStore:controls|SM:SM1|alu_add:ctr_add"
+ 30. Port Connectivity Checks: "ControlStore:controls|SM:SM1|subtracter8:sub|adder8:a1|add11:a0"
+ 31. Port Connectivity Checks: "ControlStore:controls|SM:SM1|subtracter8:sub|adder8:a1"
+ 32. Port Connectivity Checks: "ControlStore:controls|SM:SM1|subtracter8:sub"
+ 33. Port Connectivity Checks: "ControlStore:controls"
+ 34. Port Connectivity Checks: "P1Reg:P1"
+ 35. Port Connectivity Checks: "InstFetch:iFetch|alu_add:alu_pc|add_1bit:a15"
+ 36. Port Connectivity Checks: "InstFetch:iFetch|alu_add:alu_pc|add_1bit:a0"
+ 37. Port Connectivity Checks: "InstFetch:iFetch|memoryinst:inst_mem"
+ 38. Port Connectivity Checks: "InstFetch:iFetch|pc:pc1"
+ 39. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Nov 29 23:14:39 2018       ;
+; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name               ; datapath                                    ;
+; Top-level Entity Name       ; datapath                                    ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 0                                           ;
+; Total pins                  ; 3                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; datapath           ; datapath           ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------+---------+
+; SM.vhd                           ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd               ;         ;
+; LM.vhd                           ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd               ;         ;
+; memoryinst.vhd                   ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/memoryinst.vhd       ;         ;
+; WriteBack.vhd                    ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/WriteBack.vhd        ;         ;
+; tempreg1+flag_en.vhd             ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/tempreg1+flag_en.vhd ;         ;
+; signextender9.vhd                ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/signextender9.vhd    ;         ;
+; signextender6.vhd                ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/signextender6.vhd    ;         ;
+; shifter7.vhd                     ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/shifter7.vhd         ;         ;
+; RegisterRead.vhd                 ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd     ;         ;
+; registerfile.vhd                 ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/registerfile.vhd     ;         ;
+; pc.vhd                           ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/pc.vhd               ;         ;
+; P5bReg.vhd                       ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/P5bReg.vhd           ;         ;
+; P4bReg.vhd                       ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/P4bReg.vhd           ;         ;
+; P4aReg.vhd                       ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/P4aReg.vhd           ;         ;
+; P3bReg.vhd                       ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/P3bReg.vhd           ;         ;
+; P3aReg.vhd                       ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/P3aReg.vhd           ;         ;
+; P2aReg.vhd                       ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/P2aReg.vhd           ;         ;
+; P1Reg.vhd                        ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/P1Reg.vhd            ;         ;
+; mux8.vhd                         ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd             ;         ;
+; mux4.vhd                         ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd             ;         ;
+; mux2.vhd                         ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd             ;         ;
+; memory.vhd                       ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd           ;         ;
+; MemAccess.vhd                    ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd        ;         ;
+; InstFetch.vhd                    ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd        ;         ;
+; Execution.vhd                    ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd        ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd         ;         ;
+; ControlStore.vhd                 ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd     ;         ;
+; alu_add.vhd                      ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/alu_add.vhd          ;         ;
+; alu.vhd                          ; yes             ; User VHDL File        ; /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd              ;         ;
+; priorityencoder.vhd              ; yes             ; Auto-Found VHDL File  ; /home/nisha/Desktop/FINAL FINAL FINAL/priorityencoder.vhd  ;         ;
+; decoder.vhd                      ; yes             ; Auto-Found VHDL File  ; /home/nisha/Desktop/FINAL FINAL FINAL/decoder.vhd          ;         ;
+; subtracter8.vhd                  ; yes             ; Auto-Found VHDL File  ; /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd      ;         ;
+; tempreg16.vhd                    ; yes             ; Auto-Found VHDL File  ; /home/nisha/Desktop/FINAL FINAL FINAL/tempreg16.vhd        ;         ;
+; P2bReg.vhd                       ; yes             ; Auto-Found VHDL File  ; /home/nisha/Desktop/FINAL FINAL FINAL/P2bReg.vhd           ;         ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 3     ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |datapath                  ; 0 (0)       ; 0            ; 0          ; 3    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |datapath           ; datapath    ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: InstFetch:iFetch|mux4:pc_mux ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; input_width    ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegisterRead:RR|mux2:jump_mux ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; input_width    ; 16    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Execution:exec|mux2:beq_mux ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; input_width    ; 16    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Execution:exec|mux8:alu_a_mux ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; input_width    ; 16    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Execution:exec|mux4:alu_b_mux ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; input_width    ; 16    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WriteBack:WB|mux4:rf_a3_mux ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; input_width    ; 3     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WriteBack:WB|mux4:rf_d3_mux ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; input_width    ; 16    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P5bReg:P5b"                                                                                  ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; p_wr          ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; c1_in[15..5]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c2_in[9..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c1_out[15..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "P4aReg:P5a" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; p_wr ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MemAccess:mAcc|memory:data_mem"                                                          ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; mem_check ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "MemAccess:mAcc" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; mem_sel ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "P2bReg:P4c" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; p_wr ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P4bReg:P4b"                                                                                 ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; c1_in[10]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c2_in[9..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; alu_new_out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; c1_out[6..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; c1_out[10]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; c2_out[9..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "Execution:exec|LM:LM1|alu_add:ctr_add" ;
++----------+-------+----------+-------------------------------------+
+; Port     ; Type  ; Severity ; Details                             ;
++----------+-------+----------+-------------------------------------+
+; y[15..1] ; Input ; Info     ; Stuck at GND                        ;
+; y[0]     ; Input ; Info     ; Stuck at VCC                        ;
++----------+-------+----------+-------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Execution:exec|LM:LM1|subtracter8:sub"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; aluc ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluz ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Execution:exec|alu:alu_main|subtracter16:subtractersixteen|adder16:a1"                  ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; y[15..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; y[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; aluc     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluz     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Execution:exec|alu:alu_main|adder16:addersixteen|add1:a0" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; i    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "Execution:exec|mux2:beq_mux" ;
++-----------+-------+----------+--------------------------+
+; Port      ; Type  ; Severity ; Details                  ;
++-----------+-------+----------+--------------------------+
+; d0[1..0]  ; Input ; Info     ; Stuck at VCC             ;
+; d0[15..2] ; Input ; Info     ; Stuck at GND             ;
++-----------+-------+----------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P3bReg:P3b"                                                                                  ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; c3_in[12..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c3_out[12..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P2aReg:P2a"                                                                                  ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; c2_out[12..3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; c2_out[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlStore:controls|SM:SM1|alu_add:ctr_add" ;
++----------+-------+----------+--------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                    ;
++----------+-------+----------+--------------------------------------------+
+; y[15..1] ; Input ; Info     ; Stuck at GND                               ;
+; y[0]     ; Input ; Info     ; Stuck at VCC                               ;
++----------+-------+----------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlStore:controls|SM:SM1|subtracter8:sub|adder8:a1|add11:a0" ;
++------+-------+----------+-------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                           ;
++------+-------+----------+-------------------------------------------------------------------+
+; i    ; Input ; Info     ; Stuck at GND                                                      ;
++------+-------+----------+-------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlStore:controls|SM:SM1|subtracter8:sub|adder8:a1"                                ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; y[7..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; y[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; aluc    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluz    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlStore:controls|SM:SM1|subtracter8:sub"                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; aluc ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluz ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlStore:controls"                                                                                 ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                    ; Type   ; Severity ; Details                                                                             ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; control_store22[15..13] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; mem_d_sel               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P1Reg:P1"                                                                            ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; c_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "InstFetch:iFetch|alu_add:alu_pc|add_1bit:a15"                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "InstFetch:iFetch|alu_add:alu_pc|add_1bit:a0" ;
++------+-------+----------+-----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                       ;
++------+-------+----------+-----------------------------------------------+
+; i    ; Input ; Info     ; Stuck at GND                                  ;
++------+-------+----------+-----------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "InstFetch:iFetch|memoryinst:inst_mem"                                                    ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; mem_check ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; wr        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rd        ; Input  ; Info     ; Stuck at VCC                                                                        ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "InstFetch:iFetch|pc:pc1" ;
++-------+-------+----------+--------------------------+
+; Port  ; Type  ; Severity ; Details                  ;
++-------+-------+----------+--------------------------+
+; pc_en ; Input ; Info     ; Stuck at VCC             ;
++-------+-------+----------+--------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Thu Nov 29 23:14:22 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off datapath -c datapath
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file SM.vhd
+    Info (12022): Found design unit 1: SM-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 15
+    Info (12023): Found entity 1: SM File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file LM.vhd
+    Info (12022): Found design unit 1: LM-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 15
+    Info (12023): Found entity 1: LM File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file memoryinst.vhd
+    Info (12022): Found design unit 1: memoryinst-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/memoryinst.vhd Line: 19
+    Info (12023): Found entity 1: memoryinst File: /home/nisha/Desktop/FINAL FINAL FINAL/memoryinst.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file WriteBack.vhd
+    Info (12022): Found design unit 1: WriteBack-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/WriteBack.vhd Line: 20
+    Info (12023): Found entity 1: WriteBack File: /home/nisha/Desktop/FINAL FINAL FINAL/WriteBack.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file tempreg1+flag_en.vhd
+    Info (12022): Found design unit 1: tempreg1-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/tempreg1+flag_en.vhd Line: 15
+    Info (12023): Found entity 1: tempreg1 File: /home/nisha/Desktop/FINAL FINAL FINAL/tempreg1+flag_en.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file signextender9.vhd
+    Info (12022): Found design unit 1: signextender9-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/signextender9.vhd Line: 14
+    Info (12023): Found entity 1: signextender9 File: /home/nisha/Desktop/FINAL FINAL FINAL/signextender9.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file signextender6.vhd
+    Info (12022): Found design unit 1: signextender6-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/signextender6.vhd Line: 14
+    Info (12023): Found entity 1: signextender6 File: /home/nisha/Desktop/FINAL FINAL FINAL/signextender6.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file shifter7.vhd
+    Info (12022): Found design unit 1: shifter7-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/shifter7.vhd Line: 13
+    Info (12023): Found entity 1: shifter7 File: /home/nisha/Desktop/FINAL FINAL FINAL/shifter7.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file RegisterRead.vhd
+    Info (12022): Found design unit 1: RegisterRead-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd Line: 20
+    Info (12023): Found entity 1: RegisterRead File: /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file registerfile.vhd
+    Info (12022): Found design unit 1: registerfile-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/registerfile.vhd Line: 22
+    Info (12023): Found entity 1: registerfile File: /home/nisha/Desktop/FINAL FINAL FINAL/registerfile.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: pc-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/pc.vhd Line: 14
+    Info (12023): Found entity 1: pc File: /home/nisha/Desktop/FINAL FINAL FINAL/pc.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file P5bReg.vhd
+    Info (12022): Found design unit 1: P5bReg-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/P5bReg.vhd Line: 15
+    Info (12023): Found entity 1: P5bReg File: /home/nisha/Desktop/FINAL FINAL FINAL/P5bReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file P4bReg.vhd
+    Info (12022): Found design unit 1: P4bReg-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/P4bReg.vhd Line: 15
+    Info (12023): Found entity 1: P4bReg File: /home/nisha/Desktop/FINAL FINAL FINAL/P4bReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file P4aReg.vhd
+    Info (12022): Found design unit 1: P4aReg-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/P4aReg.vhd Line: 15
+    Info (12023): Found entity 1: P4aReg File: /home/nisha/Desktop/FINAL FINAL FINAL/P4aReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file P3bReg.vhd
+    Info (12022): Found design unit 1: P3bReg-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/P3bReg.vhd Line: 15
+    Info (12023): Found entity 1: P3bReg File: /home/nisha/Desktop/FINAL FINAL FINAL/P3bReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file P3aReg.vhd
+    Info (12022): Found design unit 1: P3aReg-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/P3aReg.vhd Line: 15
+    Info (12023): Found entity 1: P3aReg File: /home/nisha/Desktop/FINAL FINAL FINAL/P3aReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file P2aReg.vhd
+    Info (12022): Found design unit 1: P2aReg-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/P2aReg.vhd Line: 15
+    Info (12023): Found entity 1: P2aReg File: /home/nisha/Desktop/FINAL FINAL FINAL/P2aReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file P1Reg.vhd
+    Info (12022): Found design unit 1: P1Reg-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/P1Reg.vhd Line: 15
+    Info (12023): Found entity 1: P1Reg File: /home/nisha/Desktop/FINAL FINAL FINAL/P1Reg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mux8.vhd
+    Info (12022): Found design unit 1: mux8-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 25
+    Info (12023): Found entity 1: mux8 File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mux4.vhd
+    Info (12022): Found design unit 1: mux4-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 20
+    Info (12023): Found entity 1: mux4 File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mux2.vhd
+    Info (12022): Found design unit 1: mux2-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 18
+    Info (12023): Found entity 1: mux2 File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: memory-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 19
+    Info (12023): Found entity 1: memory File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file MemAccess.vhd
+    Info (12022): Found design unit 1: MemAccess-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd Line: 15
+    Info (12023): Found entity 1: MemAccess File: /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file InstFetch.vhd
+    Info (12022): Found design unit 1: InstFetch-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd Line: 15
+    Info (12023): Found entity 1: InstFetch File: /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file Execution.vhd
+    Info (12022): Found design unit 1: Execution-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 22
+    Info (12023): Found entity 1: Execution File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhd
+    Info (12022): Found design unit 1: datapath-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 14
+    Info (12023): Found entity 1: datapath File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file ControlStore.vhd
+    Info (12022): Found design unit 1: ControlStore-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 20
+    Info (12023): Found entity 1: ControlStore File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 7
+Info (12021): Found 4 design units, including 2 entities, in source file alu_add.vhd
+    Info (12022): Found design unit 1: add_1bit-Behave File: /home/nisha/Desktop/FINAL FINAL FINAL/alu_add.vhd Line: 10
+    Info (12022): Found design unit 2: alu_add-behave File: /home/nisha/Desktop/FINAL FINAL FINAL/alu_add.vhd Line: 28
+    Info (12023): Found entity 1: add_1bit File: /home/nisha/Desktop/FINAL FINAL FINAL/alu_add.vhd Line: 7
+    Info (12023): Found entity 2: alu_add File: /home/nisha/Desktop/FINAL FINAL FINAL/alu_add.vhd Line: 23
+Info (12021): Found 13 design units, including 6 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: lab1 File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 6
+    Info (12022): Found design unit 2: add1-Behave File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 47
+    Info (12022): Found design unit 3: mux1-Behave File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 63
+    Info (12022): Found design unit 4: adder16-behave File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 79
+    Info (12022): Found design unit 5: subtracter16-behave File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 128
+    Info (12022): Found design unit 6: nand16-behave File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 170
+    Info (12022): Found design unit 7: alu-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 219
+    Info (12023): Found entity 1: add1 File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 44
+    Info (12023): Found entity 2: mux1 File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 59
+    Info (12023): Found entity 3: adder16 File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 74
+    Info (12023): Found entity 4: subtracter16 File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 123
+    Info (12023): Found entity 5: nand16 File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 165
+    Info (12023): Found entity 6: alu File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 210
+Info (12127): Elaborating entity "datapath" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(16): object "p1_c_out" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 16
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(17): object "beq_pc" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 17
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(19): used implicit default value for signal "dummy" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 19
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(23): object "if_stall" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(25): object "count_cmd3" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at datapath.vhd(230): signal "change_alu_amux" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 230
+Warning (10492): VHDL Process Statement warning at datapath.vhd(232): signal "p3_c1_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 232
+Warning (10492): VHDL Process Statement warning at datapath.vhd(235): signal "p3_c1_in_stall" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 235
+Warning (10492): VHDL Process Statement warning at datapath.vhd(316): signal "P3_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 316
+Warning (10492): VHDL Process Statement warning at datapath.vhd(316): signal "p4_c1_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 316
+Warning (10492): VHDL Process Statement warning at datapath.vhd(324): signal "P4_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 324
+Warning (10492): VHDL Process Statement warning at datapath.vhd(346): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 346
+Warning (10492): VHDL Process Statement warning at datapath.vhd(349): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 349
+Warning (10492): VHDL Process Statement warning at datapath.vhd(352): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 352
+Warning (10492): VHDL Process Statement warning at datapath.vhd(355): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 355
+Warning (10492): VHDL Process Statement warning at datapath.vhd(370): signal "count_cmd2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 370
+Warning (10492): VHDL Process Statement warning at datapath.vhd(370): signal "P4_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 370
+Warning (10620): VHDL warning at datapath.vhd(370): comparison between unequal length operands always returns TRUE File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 370
+Warning (10492): VHDL Process Statement warning at datapath.vhd(374): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 374
+Warning (10492): VHDL Process Statement warning at datapath.vhd(375): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 375
+Warning (10492): VHDL Process Statement warning at datapath.vhd(376): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 376
+Warning (10492): VHDL Process Statement warning at datapath.vhd(377): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 377
+Warning (10492): VHDL Process Statement warning at datapath.vhd(378): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 378
+Warning (10492): VHDL Process Statement warning at datapath.vhd(380): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 380
+Warning (10492): VHDL Process Statement warning at datapath.vhd(381): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 381
+Warning (10492): VHDL Process Statement warning at datapath.vhd(382): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 382
+Warning (10492): VHDL Process Statement warning at datapath.vhd(383): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 383
+Warning (10492): VHDL Process Statement warning at datapath.vhd(384): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 384
+Warning (10492): VHDL Process Statement warning at datapath.vhd(385): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 385
+Warning (10492): VHDL Process Statement warning at datapath.vhd(386): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 386
+Warning (10492): VHDL Process Statement warning at datapath.vhd(387): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 387
+Warning (10492): VHDL Process Statement warning at datapath.vhd(388): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 388
+Warning (10492): VHDL Process Statement warning at datapath.vhd(389): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 389
+Warning (10492): VHDL Process Statement warning at datapath.vhd(390): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 390
+Warning (10492): VHDL Process Statement warning at datapath.vhd(391): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 391
+Warning (10492): VHDL Process Statement warning at datapath.vhd(392): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 392
+Warning (10492): VHDL Process Statement warning at datapath.vhd(393): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 393
+Warning (10492): VHDL Process Statement warning at datapath.vhd(394): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 394
+Warning (10492): VHDL Process Statement warning at datapath.vhd(396): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 396
+Warning (10492): VHDL Process Statement warning at datapath.vhd(399): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 399
+Warning (10492): VHDL Process Statement warning at datapath.vhd(399): signal "carry" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 399
+Warning (10492): VHDL Process Statement warning at datapath.vhd(401): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 401
+Warning (10492): VHDL Process Statement warning at datapath.vhd(401): signal "zero" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 401
+Warning (10492): VHDL Process Statement warning at datapath.vhd(404): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 404
+Warning (10492): VHDL Process Statement warning at datapath.vhd(404): signal "carry" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 404
+Warning (10492): VHDL Process Statement warning at datapath.vhd(407): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 407
+Warning (10492): VHDL Process Statement warning at datapath.vhd(407): signal "zero" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 407
+Warning (10492): VHDL Process Statement warning at datapath.vhd(409): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 409
+Warning (10492): VHDL Process Statement warning at datapath.vhd(412): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 412
+Warning (10492): VHDL Process Statement warning at datapath.vhd(413): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 413
+Warning (10492): VHDL Process Statement warning at datapath.vhd(422): signal "P3_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 422
+Warning (10492): VHDL Process Statement warning at datapath.vhd(422): signal "alu_z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 422
+Warning (10492): VHDL Process Statement warning at datapath.vhd(432): signal "P1_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 432
+Warning (10492): VHDL Process Statement warning at datapath.vhd(432): signal "p1_ir_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 432
+Warning (10492): VHDL Process Statement warning at datapath.vhd(432): signal "sm_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 432
+Warning (10492): VHDL Process Statement warning at datapath.vhd(432): signal "put_stall_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 432
+Warning (10492): VHDL Process Statement warning at datapath.vhd(436): signal "P2_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 436
+Warning (10492): VHDL Process Statement warning at datapath.vhd(436): signal "P3_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 436
+Warning (10492): VHDL Process Statement warning at datapath.vhd(436): signal "lm_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 436
+Warning (10492): VHDL Process Statement warning at datapath.vhd(436): signal "put_stall_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 436
+Warning (10492): VHDL Process Statement warning at datapath.vhd(445): signal "P3_IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 445
+Warning (10492): VHDL Process Statement warning at datapath.vhd(445): signal "lm_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 445
+Warning (10492): VHDL Process Statement warning at datapath.vhd(450): signal "p1_ir_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 450
+Warning (10492): VHDL Process Statement warning at datapath.vhd(450): signal "sm_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 450
+Warning (10631): VHDL Process Statement warning at datapath.vhd(364): inferring latch(es) for signal or variable "count_cmd1", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Warning (10631): VHDL Process Statement warning at datapath.vhd(364): inferring latch(es) for signal or variable "count_cmd", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Warning (10631): VHDL Process Statement warning at datapath.vhd(364): inferring latch(es) for signal or variable "count_cmd2", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Warning (10631): VHDL Process Statement warning at datapath.vhd(364): inferring latch(es) for signal or variable "p3_c1_in", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Warning (10631): VHDL Process Statement warning at datapath.vhd(364): inferring latch(es) for signal or variable "p22_wr", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Warning (10631): VHDL Process Statement warning at datapath.vhd(364): inferring latch(es) for signal or variable "p33_wr", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Warning (10873): Using initial value X (don't care) for net "p5_c1_in[15..5]" at datapath.vhd(16) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 16
+Warning (10873): Using initial value X (don't care) for net "p5_c2_in[9..0]" at datapath.vhd(16) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 16
+Warning (10873): Using initial value X (don't care) for net "p4_c1_in[10]" at datapath.vhd(17) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 17
+Warning (10873): Using initial value X (don't care) for net "p4_c2_in[9..0]" at datapath.vhd(17) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 17
+Warning (10873): Using initial value X (don't care) for net "p3_c3_in[12..0]" at datapath.vhd(17) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 17
+Info (10041): Inferred latch for "p33_wr" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "p22_wr" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "p3_c1_in[13]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd2[0]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd2[1]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd2[2]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd2[3]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd2[4]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd2[5]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd2[6]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd[0]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd[1]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd[2]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd[3]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd[4]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd[5]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd[6]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd1[0]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd1[1]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd1[2]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd1[3]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd1[4]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd1[5]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (10041): Inferred latch for "count_cmd1[6]" at datapath.vhd(364) File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 364
+Info (12128): Elaborating entity "InstFetch" for hierarchy "InstFetch:iFetch" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 162
+Warning (10541): VHDL Signal Declaration warning at InstFetch.vhd(17): used implicit default value for signal "dummy" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd Line: 17
+Warning (10541): VHDL Signal Declaration warning at InstFetch.vhd(17): used implicit default value for signal "dummy_d" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd Line: 17
+Info (12128): Elaborating entity "pc" for hierarchy "InstFetch:iFetch|pc:pc1" File: /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd Line: 79
+Info (12128): Elaborating entity "mux4" for hierarchy "InstFetch:iFetch|mux4:pc_mux" File: /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd Line: 82
+Warning (10631): VHDL Process Statement warning at mux4.vhd(22): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[0]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[1]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[2]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[3]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[4]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[5]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[6]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[7]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[8]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[9]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[10]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[11]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[12]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[13]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[14]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[15]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (12128): Elaborating entity "memoryinst" for hierarchy "InstFetch:iFetch|memoryinst:inst_mem" File: /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd Line: 86
+Info (12128): Elaborating entity "alu_add" for hierarchy "InstFetch:iFetch|alu_add:alu_pc" File: /home/nisha/Desktop/FINAL FINAL FINAL/InstFetch.vhd Line: 89
+Info (12128): Elaborating entity "add_1bit" for hierarchy "InstFetch:iFetch|alu_add:alu_pc|add_1bit:a0" File: /home/nisha/Desktop/FINAL FINAL FINAL/alu_add.vhd Line: 36
+Info (12128): Elaborating entity "P1Reg" for hierarchy "P1Reg:P1" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 172
+Info (12128): Elaborating entity "ControlStore" for hierarchy "ControlStore:controls" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 177
+Warning (10036): Verilog HDL or VHDL warning at ControlStore.vhd(22): object "reset_count" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 22
+Warning (10036): Verilog HDL or VHDL warning at ControlStore.vhd(23): object "haz_det" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at ControlStore.vhd(47): object "cyc_done" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 47
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(67): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(70): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(78): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(81): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(93): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(93): signal "t2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(96): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(97): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(99): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(99): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(107): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(109): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(109): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(118): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 118
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(120): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(120): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(136): signal "P5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 136
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(154): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 154
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(154): signal "t1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 154
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(160): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(161): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(163): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(163): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(175): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(177): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(177): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(188): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 188
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(190): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(190): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(205): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 205
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(207): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 207
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(209): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 209
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(209): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 209
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(225): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 225
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(227): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 227
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(227): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 227
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(240): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 240
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(242): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 242
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(242): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 242
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(254): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 254
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(256): signal "P4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 256
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(256): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 256
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(274): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(286): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 286
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(297): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 297
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(308): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 308
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(321): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 321
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(347): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 347
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(349): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 349
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(352): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 352
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(352): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 352
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(362): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 362
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(364): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 364
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(367): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 367
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(367): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 367
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(378): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 378
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(380): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 380
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(383): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 383
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(383): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 383
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(392): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 392
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(394): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 394
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(397): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 397
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(397): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 397
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(412): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 412
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(414): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 414
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(417): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 417
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(417): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 417
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(426): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 426
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(428): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 428
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(431): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 431
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(431): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 431
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(440): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 440
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(442): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 442
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(445): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 445
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(445): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 445
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(454): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 454
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(456): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 456
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(459): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 459
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(459): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 459
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(469): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 469
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(471): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 471
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(474): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 474
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(474): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 474
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(485): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 485
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(487): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 487
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(490): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 490
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(490): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 490
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(505): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 505
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(507): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 507
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(510): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 510
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(510): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 510
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(519): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 519
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(521): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 521
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(524): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 524
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(524): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 524
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(533): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 533
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(535): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 535
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(538): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 538
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(538): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 538
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(547): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 547
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(549): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 549
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(552): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 552
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(552): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 552
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(563): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 563
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(565): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 565
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(568): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 568
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(568): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 568
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(582): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 582
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(584): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 584
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(587): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 587
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(587): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 587
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(596): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 596
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(598): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 598
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(601): signal "P2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 601
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(601): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 601
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(615): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 615
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(617): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 617
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(618): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 618
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(618): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 618
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(629): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 629
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(631): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 631
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(634): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 634
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(634): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 634
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(644): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 644
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(646): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 646
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(648): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 648
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(648): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 648
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(657): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 657
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(659): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 659
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(662): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 662
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(662): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 662
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(677): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 677
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(679): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 679
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(680): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 680
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(680): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 680
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(688): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 688
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(690): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 690
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(692): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 692
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(692): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 692
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(703): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 703
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(705): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 705
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(707): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 707
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(707): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 707
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(719): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 719
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(721): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 721
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(723): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 723
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(723): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 723
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(735): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 735
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(737): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 737
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(740): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 740
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(740): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 740
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(750): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 750
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(752): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 752
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(755): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 755
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(755): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 755
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(774): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 774
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(776): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 776
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(779): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 779
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(779): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 779
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(789): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 789
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(791): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 791
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(794): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 794
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(794): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 794
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(810): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 810
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(812): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 812
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(814): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 814
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(814): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 814
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(822): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 822
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(824): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 824
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(827): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 827
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(827): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 827
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(837): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 837
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(839): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 839
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(842): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 842
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(842): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 842
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(854): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 854
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(856): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 856
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(859): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 859
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(859): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 859
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(876): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 876
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(878): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 878
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(881): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 881
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(881): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 881
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(891): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 891
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(893): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 893
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(895): signal "P3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 895
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(895): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 895
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(911): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 911
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(914): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 914
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(917): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 917
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(923): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 923
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(930): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 930
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(947): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 947
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(948): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 948
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(951): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 951
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(954): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 954
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(959): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 959
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(962): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 962
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(965): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 965
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(966): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 966
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(968): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 968
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(973): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 973
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(976): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 976
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(979): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 979
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(982): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 982
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(988): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 988
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(988): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 988
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(990): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 990
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(992): signal "count_cmd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 992
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(993): signal "count_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 993
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(1002): signal "P1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 1002
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "count_cmd", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "count_cmd1", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "put_stall_out", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "p4_c1_in_cs_f", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "p1_write", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "p2_write", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "p3_write", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "p4_write", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "t1", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "t2", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "load_h_alu_a", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "control_store1", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "p3_c1_in_cs", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at ControlStore.vhd(46): inferring latch(es) for signal or variable "Mem_d_sel", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(1025): signal "check" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 1025
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(1025): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 1025
+Warning (10492): VHDL Process Statement warning at ControlStore.vhd(1027): signal "check" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 1027
+Warning (10873): Using initial value X (don't care) for net "control_store2[15..3]" at ControlStore.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 24
+Warning (10873): Using initial value X (don't care) for net "control_store2[0]" at ControlStore.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 24
+Info (10041): Inferred latch for "Mem_d_sel" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p3_c1_in_cs[0]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p3_c1_in_cs[1]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p3_c1_in_cs[2]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[2]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[3]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[4]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[5]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[6]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[7]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[10]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[11]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[12]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[13]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[14]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "control_store1[15]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "load_h_alu_a" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "t2" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "t1" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p4_write" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p3_write" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p2_write" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p1_write" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p4_c1_in_cs_f[0]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p4_c1_in_cs_f[1]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p4_c1_in_cs_f[2]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p4_c1_in_cs_f[3]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "p4_c1_in_cs_f[4]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "put_stall_out" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd1[0]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd1[1]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd1[2]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd1[3]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd1[4]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd1[5]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd1[6]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd[0]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd[1]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd[2]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd[3]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd[4]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd[5]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (10041): Inferred latch for "count_cmd[6]" at ControlStore.vhd(46) File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 46
+Info (12128): Elaborating entity "SM" for hierarchy "ControlStore:controls|SM:SM1" File: /home/nisha/Desktop/FINAL FINAL FINAL/ControlStore.vhd Line: 1020
+Warning (10492): VHDL Process Statement warning at SM.vhd(110): signal "IR1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at SM.vhd(112): signal "ans" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at SM.vhd(125): signal "ctr_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at SM.vhd(125): signal "tpbhai2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at SM.vhd(127): signal "ctr_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at SM.vhd(127): signal "tpbhai" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at SM.vhd(130): signal "ctr_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 130
+Warning (10492): VHDL Process Statement warning at SM.vhd(140): signal "reset_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 140
+Warning (10492): VHDL Process Statement warning at SM.vhd(143): signal "mux_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 143
+Warning (10492): VHDL Process Statement warning at SM.vhd(143): signal "kid" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 143
+Warning (10492): VHDL Process Statement warning at SM.vhd(146): signal "kid" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 146
+Warning (10631): VHDL Process Statement warning at SM.vhd(138): inferring latch(es) for signal or variable "kid", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 138
+Warning (10631): VHDL Process Statement warning at SM.vhd(138): inferring latch(es) for signal or variable "stall_bit1", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 138
+Info (10041): Inferred latch for "stall_bit1" at SM.vhd(138) File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 138
+Info (10041): Inferred latch for "kid" at SM.vhd(138) File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 138
+Warning (12125): Using design file priorityencoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: priorityencoder-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/priorityencoder.vhd Line: 13
+    Info (12023): Found entity 1: priorityencoder File: /home/nisha/Desktop/FINAL FINAL FINAL/priorityencoder.vhd Line: 6
+Info (12128): Elaborating entity "priorityencoder" for hierarchy "ControlStore:controls|SM:SM1|priorityencoder:PE" File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 79
+Warning (12125): Using design file decoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: decoder-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/decoder.vhd Line: 13
+    Info (12023): Found entity 1: decoder File: /home/nisha/Desktop/FINAL FINAL FINAL/decoder.vhd Line: 6
+Info (12128): Elaborating entity "decoder" for hierarchy "ControlStore:controls|SM:SM1|decoder:dec" File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 82
+Warning (12125): Using design file subtracter8.vhd, which is not specified as a design file for the current project, but contains definitions for 6 design units and 3 entities in project
+    Info (12022): Found design unit 1: add11-Behave File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 9
+    Info (12022): Found design unit 2: adder8-behave File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 26
+    Info (12022): Found design unit 3: subtracter8-behave File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 65
+    Info (12023): Found entity 1: add11 File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 6
+    Info (12023): Found entity 2: adder8 File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 21
+    Info (12023): Found entity 3: subtracter8 File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 60
+Info (12128): Elaborating entity "subtracter8" for hierarchy "ControlStore:controls|SM:SM1|subtracter8:sub" File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 85
+Warning (10036): Verilog HDL or VHDL warning at subtracter8.vhd(67): object "c1" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 67
+Warning (10036): Verilog HDL or VHDL warning at subtracter8.vhd(67): object "t1" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 67
+Info (12128): Elaborating entity "adder8" for hierarchy "ControlStore:controls|SM:SM1|subtracter8:sub|adder8:a1" File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 82
+Info (12128): Elaborating entity "add11" for hierarchy "ControlStore:controls|SM:SM1|subtracter8:sub|adder8:a1|add11:a0" File: /home/nisha/Desktop/FINAL FINAL FINAL/subtracter8.vhd Line: 32
+Warning (12125): Using design file tempreg16.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: tempreg16-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/tempreg16.vhd Line: 14
+    Info (12023): Found entity 1: tempreg16 File: /home/nisha/Desktop/FINAL FINAL FINAL/tempreg16.vhd Line: 7
+Info (12128): Elaborating entity "tempreg16" for hierarchy "ControlStore:controls|SM:SM1|tempreg16:counter" File: /home/nisha/Desktop/FINAL FINAL FINAL/SM.vhd Line: 92
+Info (12128): Elaborating entity "P2aReg" for hierarchy "P2aReg:P2a" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 186
+Warning (12125): Using design file P2bReg.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: P2bReg-struct File: /home/nisha/Desktop/FINAL FINAL FINAL/P2bReg.vhd Line: 15
+    Info (12023): Found entity 1: P2bReg File: /home/nisha/Desktop/FINAL FINAL FINAL/P2bReg.vhd Line: 7
+Info (12128): Elaborating entity "P2bReg" for hierarchy "P2bReg:P2b" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 191
+Info (12128): Elaborating entity "RegisterRead" for hierarchy "RegisterRead:RR" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 195
+Warning (10492): VHDL Process Statement warning at RegisterRead.vhd(96): signal "ir_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at RegisterRead.vhd(97): signal "Reg_sm" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at RegisterRead.vhd(98): signal "rf_a2_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd Line: 98
+Info (12128): Elaborating entity "registerfile" for hierarchy "RegisterRead:RR|registerfile:rf" File: /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd Line: 79
+Info (12128): Elaborating entity "signextender9" for hierarchy "RegisterRead:RR|signextender9:se9" File: /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd Line: 85
+Info (12128): Elaborating entity "mux2" for hierarchy "RegisterRead:RR|mux2:jump_mux" File: /home/nisha/Desktop/FINAL FINAL FINAL/RegisterRead.vhd Line: 88
+Warning (10631): VHDL Process Statement warning at mux2.vhd(20): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[0]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[1]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[2]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[3]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[4]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[5]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[6]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[7]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[8]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[9]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[10]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[11]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[12]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[13]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[14]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (10041): Inferred latch for "dout[15]" at mux2.vhd(20) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux2.vhd Line: 20
+Info (12128): Elaborating entity "P3aReg" for hierarchy "P3aReg:P3a" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 214
+Info (12128): Elaborating entity "P3bReg" for hierarchy "P3bReg:P3b" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 218
+Info (12128): Elaborating entity "Execution" for hierarchy "Execution:exec" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 239
+Warning (10541): VHDL Signal Declaration warning at Execution.vhd(24): used implicit default value for signal "dummy3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at Execution.vhd(25): object "reset_count" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at Execution.vhd(168): signal "p3_ir_o" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at Execution.vhd(174): signal "p3_ir_o" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at Execution.vhd(181): signal "check" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at Execution.vhd(181): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at Execution.vhd(183): signal "check" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 183
+Info (12128): Elaborating entity "signextender6" for hierarchy "Execution:exec|signextender6:se6_1" File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 132
+Info (12128): Elaborating entity "shifter7" for hierarchy "Execution:exec|shifter7:s7" File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 135
+Info (12128): Elaborating entity "mux8" for hierarchy "Execution:exec|mux8:alu_a_mux" File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 138
+Warning (10631): VHDL Process Statement warning at mux8.vhd(27): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[0]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[1]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[2]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[3]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[4]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[5]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[6]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[7]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[8]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[9]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[10]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[11]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[12]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[13]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[14]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (10041): Inferred latch for "dout[15]" at mux8.vhd(27) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux8.vhd Line: 27
+Info (12128): Elaborating entity "alu" for hierarchy "Execution:exec|alu:alu_main" File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 149
+Warning (10631): VHDL Process Statement warning at alu.vhd(233): inferring latch(es) for signal or variable "aluz", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Warning (10631): VHDL Process Statement warning at alu.vhd(233): inferring latch(es) for signal or variable "aluc", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Warning (10631): VHDL Process Statement warning at alu.vhd(233): inferring latch(es) for signal or variable "z", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[0]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[1]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[2]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[3]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[4]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[5]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[6]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[7]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[8]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[9]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[10]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[11]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[12]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[13]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[14]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "z[15]" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "aluc" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (10041): Inferred latch for "aluz" at alu.vhd(233) File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 233
+Info (12128): Elaborating entity "adder16" for hierarchy "Execution:exec|alu:alu_main|adder16:addersixteen" File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 230
+Info (12128): Elaborating entity "add1" for hierarchy "Execution:exec|alu:alu_main|adder16:addersixteen|add1:a0" File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 87
+Info (12128): Elaborating entity "nand16" for hierarchy "Execution:exec|alu:alu_main|nand16:nandsixteen" File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 231
+Info (12128): Elaborating entity "subtracter16" for hierarchy "Execution:exec|alu:alu_main|subtracter16:subtractersixteen" File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 232
+Warning (10036): Verilog HDL or VHDL warning at alu.vhd(130): object "c1" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 130
+Warning (10036): Verilog HDL or VHDL warning at alu.vhd(130): object "t1" assigned a value but never read File: /home/nisha/Desktop/FINAL FINAL FINAL/alu.vhd Line: 130
+Info (12128): Elaborating entity "tempreg1" for hierarchy "Execution:exec|tempreg1:c_reg" File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 152
+Warning (10631): VHDL Process Statement warning at tempreg1+flag_en.vhd(17): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/tempreg1+flag_en.vhd Line: 17
+Info (10041): Inferred latch for "dout" at tempreg1+flag_en.vhd(17) File: /home/nisha/Desktop/FINAL FINAL FINAL/tempreg1+flag_en.vhd Line: 17
+Info (12128): Elaborating entity "LM" for hierarchy "Execution:exec|LM:LM1" File: /home/nisha/Desktop/FINAL FINAL FINAL/Execution.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at LM.vhd(110): signal "IR1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at LM.vhd(112): signal "ans" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at LM.vhd(125): signal "tpbhai4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at LM.vhd(127): signal "tpbhai3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at LM.vhd(129): signal "ctr_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at LM.vhd(129): signal "tpbhai2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at LM.vhd(131): signal "ctr_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at LM.vhd(131): signal "tpbhai" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at LM.vhd(134): signal "ctr_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at LM.vhd(144): signal "reset_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 144
+Warning (10492): VHDL Process Statement warning at LM.vhd(147): signal "mux_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at LM.vhd(147): signal "kid" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at LM.vhd(150): signal "kid" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 150
+Warning (10631): VHDL Process Statement warning at LM.vhd(142): inferring latch(es) for signal or variable "kid", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 142
+Warning (10631): VHDL Process Statement warning at LM.vhd(142): inferring latch(es) for signal or variable "stall_bit1", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 142
+Info (10041): Inferred latch for "stall_bit1" at LM.vhd(142) File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 142
+Info (10041): Inferred latch for "kid" at LM.vhd(142) File: /home/nisha/Desktop/FINAL FINAL FINAL/LM.vhd Line: 142
+Info (12128): Elaborating entity "P4aReg" for hierarchy "P4aReg:P4a" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 253
+Info (12128): Elaborating entity "P4bReg" for hierarchy "P4bReg:P4b" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 257
+Info (12128): Elaborating entity "MemAccess" for hierarchy "MemAccess:mAcc" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 279
+Warning (10492): VHDL Process Statement warning at MemAccess.vhd(60): signal "mem_sel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at MemAccess.vhd(61): signal "memd_out_p5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at MemAccess.vhd(62): signal "ir_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd Line: 62
+Warning (10492): VHDL Process Statement warning at MemAccess.vhd(63): signal "SM_d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at MemAccess.vhd(64): signal "mem_d_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd Line: 64
+Info (12128): Elaborating entity "memory" for hierarchy "MemAccess:mAcc|memory:data_mem" File: /home/nisha/Desktop/FINAL FINAL FINAL/MemAccess.vhd Line: 51
+Warning (10541): VHDL Signal Declaration warning at memory.vhd(9): used implicit default value for signal "mem_check" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 9
+Warning (10492): VHDL Process Statement warning at memory.vhd(40): signal "rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 40
+Warning (10492): VHDL Process Statement warning at memory.vhd(41): signal "mem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at memory.vhd(41): signal "rf_a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at memory.vhd(42): signal "wr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at memory.vhd(24): inferring latch(es) for signal or variable "rf_d1", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[0]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[1]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[2]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[3]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[4]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[5]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[6]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[7]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[8]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[9]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[10]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[11]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[12]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[13]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[14]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (10041): Inferred latch for "rf_d1[15]" at memory.vhd(24) File: /home/nisha/Desktop/FINAL FINAL FINAL/memory.vhd Line: 24
+Info (12128): Elaborating entity "P5bReg" for hierarchy "P5bReg:P5b" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 291
+Info (12128): Elaborating entity "WriteBack" for hierarchy "WriteBack:WB" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 302
+Info (12128): Elaborating entity "mux4" for hierarchy "WriteBack:WB|mux4:rf_a3_mux" File: /home/nisha/Desktop/FINAL FINAL FINAL/WriteBack.vhd Line: 55
+Warning (10631): VHDL Process Statement warning at mux4.vhd(22): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[0]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[1]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Info (10041): Inferred latch for "dout[2]" at mux4.vhd(22) File: /home/nisha/Desktop/FINAL FINAL FINAL/mux4.vhd Line: 22
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 9
+    Warning (15610): No output dependent on input pin "reset" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 9
+    Warning (15610): No output dependent on input pin "clock_50" File: /home/nisha/Desktop/FINAL FINAL FINAL/datapath.vhd Line: 9
+Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 381 warnings
+    Info: Peak virtual memory: 1242 megabytes
+    Info: Processing ended: Thu Nov 29 23:14:39 2018
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:34
+
+
